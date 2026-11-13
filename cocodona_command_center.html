@@ -1,0 +1,2157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cocodona 250 (May 2-7, 2027) | Dean & Darin Pacer & Crew Command</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap');
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: #0b0f19;
+      color: #e2e8f0;
+    }
+    .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #0f172a;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #334155;
+      border-radius: 3px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #475569;
+    }
+    .glass-card {
+      background: rgba(17, 24, 39, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .gradient-border-amber {
+      border-left: 4px solid #f59e0b;
+    }
+    .gradient-border-blue {
+      border-left: 4px solid #3b82f6;
+    }
+    .gradient-border-emerald {
+      border-left: 4px solid #10b981;
+    }
+    .gradient-border-purple {
+      border-left: 4px solid #8b5cf6;
+    }
+    .gradient-border-rose {
+      border-left: 4px solid #f43f5e;
+    }
+    .tab-btn.active {
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      color: #0b0f19;
+      font-weight: 700;
+      box-shadow: 0 4px 14px 0 rgba(245, 158, 11, 0.35);
+    }
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.15rem 0.55rem;
+      border-radius: 9999px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.025em;
+    }
+    .badge-yes {
+      background: rgba(16, 185, 129, 0.18);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.35);
+    }
+    .badge-no {
+      background: rgba(148, 163, 184, 0.1);
+      color: #94a3b8;
+      border: 1px solid rgba(148, 163, 184, 0.2);
+    }
+    .badge-warn {
+      background: rgba(245, 158, 11, 0.18);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.35);
+    }
+    .badge-alert {
+      background: rgba(244, 63, 94, 0.18);
+      color: #fb7185;
+      border: 1px solid rgba(244, 63, 94, 0.35);
+    }
+    .badge-purple {
+      background: rgba(168, 85, 247, 0.18);
+      color: #c084fc;
+      border: 1px solid rgba(168, 85, 247, 0.35);
+    }
+    .badge-blue {
+      background: rgba(59, 130, 246, 0.18);
+      color: #60a5fa;
+      border: 1px solid rgba(59, 130, 246, 0.35);
+    }
+    .table-row-hover:hover {
+      background: rgba(30, 41, 59, 0.6);
+    }
+  </style>
+</head>
+<body class="min-h-screen text-slate-100 antialiased selection:bg-amber-500 selection:text-black">
+
+  <!-- Top Hero Header -->
+  <header class="border-b border-slate-800 bg-slate-950/90 backdrop-blur-md sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center space-x-3.5">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 via-orange-500 to-red-600 flex items-center justify-center shadow-lg shadow-orange-500/20 text-slate-950 font-black text-xl">
+          <i class="fa-solid fa-mountain"></i>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-bold uppercase tracking-widest text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">Aravaipa Running</span>
+            <span class="text-xs text-slate-400">May 2 - 7, 2027</span>
+          </div>
+          <h1 class="text-xl sm:text-2xl font-black tracking-tight text-white flex items-center gap-2">
+            Cocodona 250 <span class="text-amber-400 font-semibold text-base sm:text-lg">| Dean & Darin Pacer & Crew Command</span>
+          </h1>
+        </div>
+      </div>
+
+      <!-- Official Links & Team Badge -->
+      <div class="flex flex-wrap items-center gap-2.5">
+        <div class="flex items-center bg-slate-900 border border-slate-700 rounded-xl px-3 py-1.5 text-xs text-slate-300">
+          <i class="fa-solid fa-user-group text-amber-400 mr-2"></i>
+          <span>Racers: <strong class="text-white font-semibold">Dean & Darin</strong> <span class="text-slate-400">(Tandem Pacing)</span></span>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <a href="https://www.aravaiparunning.com/cocodona/" target="_blank" rel="noopener" class="text-xs font-medium px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 flex items-center gap-1.5 transition">
+            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i> Race Site
+          </a>
+          <a href="https://docs.google.com/document/d/156Ge3lJaATp4IYFc3WToLqaXfHn5-_AelZxvFFrNH2Q/edit?pli=1&tab=t.ndvtmkcv6b3t" target="_blank" rel="noopener" class="text-xs font-medium px-3 py-1.5 rounded-lg bg-orange-600/20 hover:bg-orange-600/30 text-orange-300 hover:text-white border border-orange-500/40 flex items-center gap-1.5 transition">
+            <i class="fa-solid fa-book-open text-[10px]"></i> Crew & Pacer Guide
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs (Wrapping Cleanly, No Horizontal Scroll Needed) -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-1 border-t border-slate-800/80">
+      <nav class="flex flex-wrap items-center gap-1.5 sm:gap-2 py-2.5 text-xs sm:text-sm">
+        <button onclick="setTab('overview')" id="tab-overview" class="tab-btn active px-3.5 py-1.5 rounded-lg font-medium transition flex items-center gap-1.5">
+          <i class="fa-solid fa-gauge-high"></i> Executive Summary
+        </button>
+        <button onclick="setTab('aid_stations')" id="tab-aid_stations" class="tab-btn px-3.5 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 font-medium transition flex items-center gap-1.5">
+          <i class="fa-solid fa-flag-checkered"></i> Aid Stations & Cutoffs
+        </button>
+        <button onclick="setTab('pacers')" id="tab-pacers" class="tab-btn px-3.5 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 font-medium transition flex items-center gap-1.5">
+          <i class="fa-solid fa-person-running"></i> Pacer Rosters & Strategies
+        </button>
+        <button onclick="setTab('sleep')" id="tab-sleep" class="tab-btn px-3.5 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 font-medium transition flex items-center gap-1.5">
+          <i class="fa-solid fa-bed"></i> Sleep & Trail Naps
+        </button>
+        <button onclick="setTab('elevation')" id="tab-elevation" class="tab-btn px-3.5 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 font-medium transition flex items-center gap-1.5">
+          <i class="fa-solid fa-chart-area"></i> Elevation Profile (33.5k Gain)
+        </button>
+        <button onclick="setTab('calculator')" id="tab-calculator" class="tab-btn px-3.5 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 font-medium transition flex items-center gap-1.5">
+          <i class="fa-solid fa-stopwatch"></i> Pace & ETA Sim
+        </button>
+        <button onclick="setTab('gear')" id="tab-gear" class="tab-btn px-3.5 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 font-medium transition flex items-center gap-1.5">
+          <i class="fa-solid fa-clipboard-check"></i> Gear Checklist
+        </button>
+        <button onclick="setTab('nutrition')" id="tab-nutrition" class="tab-btn px-3.5 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 font-medium transition flex items-center gap-1.5">
+          <i class="fa-solid fa-bottle-water"></i> Fuel & Hydration
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
+
+    <!-- Team Overview Banner -->
+    <div class="glass-card rounded-2xl p-4 sm:p-5 border-l-4 border-amber-500 flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center gap-3.5">
+        <div class="w-12 h-12 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-400 flex items-center justify-center text-xl font-bold">
+          <i id="runnerIcon" class="fa-solid fa-user-group"></i>
+        </div>
+        <div>
+          <div class="text-xs uppercase tracking-wider text-amber-400 font-bold">Official Race Team</div>
+          <div class="text-xl font-bold text-white flex items-center gap-2">
+            <span id="runnerTitle">Dean & Darin</span>
+            <span class="text-xs font-normal text-slate-400 bg-slate-800 px-2 py-0.5 rounded border border-slate-700">Tandem Pacing Strategy</span>
+          </div>
+          <div class="text-xs text-slate-400 mt-0.5">
+            Dean and Darin are keeping pace together throughout the race, targeting a calculated, resilient 105 - 115 hour finish before the strict 125-hour cutoff at Heritage Square, Flagstaff.
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Ribbon -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center w-full lg:w-auto">
+        <div class="bg-slate-900/80 px-3.5 py-2 rounded-xl border border-slate-800">
+          <div class="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Total Distance</div>
+          <div class="text-base sm:text-lg font-black text-amber-400 font-mono">253.5 mi</div>
+        </div>
+        <div class="bg-slate-900/80 px-3.5 py-2 rounded-xl border border-slate-800">
+          <div class="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Total Elevation</div>
+          <div class="text-base sm:text-lg font-black text-emerald-400 font-mono">+33,504 ft</div>
+        </div>
+        <div class="bg-slate-900/80 px-3.5 py-2 rounded-xl border border-slate-800">
+          <div class="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Race Cutoff</div>
+          <div class="text-base sm:text-lg font-black text-red-400 font-mono">125h 00m</div>
+        </div>
+        <div class="bg-slate-900/80 px-3.5 py-2 rounded-xl border border-slate-800">
+          <div class="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Avg Needed Pace</div>
+          <div class="text-base sm:text-lg font-black text-blue-400 font-mono">2.03 mph (29:35/m)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 1: OVERVIEW / EXECUTIVE SUMMARY -->
+    <div id="tabContent-overview" class="tab-panel space-y-6">
+      
+      <!-- Key Race Cruxes Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div class="glass-card rounded-2xl p-5 gradient-border-rose hover:border-slate-700 transition">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-bold uppercase tracking-wider text-rose-400 bg-rose-500/10 px-2 py-0.5 rounded border border-rose-500/20">Danger Zone 1 (Miles 7.4 - 32.5)</span>
+            <i class="fa-solid fa-fire text-rose-500"></i>
+          </div>
+          <h3 class="font-bold text-lg text-white mb-2">The Bradshaws Furnace</h3>
+          <p class="text-xs text-slate-300 leading-relaxed mb-3">
+            Cottonwood Creek to Lane Mtn climbs <strong>8,500 ft</strong> in blistering desert heat over ~25 miles. Middle-of-the-pack runners take approx 10 hours; back-of-pack takes 13+ hours.
+          </p>
+          <div class="p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 text-xs text-rose-300 flex items-start gap-2">
+            <i class="fa-solid fa-triangle-exclamation mt-0.5 text-rose-400"></i>
+            <span><strong>Mandatory 4L Water:</strong> Must carry 4 liters leaving Cottonwood Creek. Plan a steep climbing pace of 30-40 min/mile!</span>
+          </div>
+        </div>
+
+        <div class="glass-card rounded-2xl p-5 gradient-border-amber hover:border-slate-700 transition">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-bold uppercase tracking-wider text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">Strategic Rest (Mile 107.2)</span>
+            <i class="fa-solid fa-bed text-amber-500"></i>
+          </div>
+          <h3 class="font-bold text-lg text-white mb-2">Mingus Mountain Anchor</h3>
+          <p class="text-xs text-slate-300 leading-relaxed mb-3">
+            After clearing the first 100 miles and the sustained climb from Fain Ranch (+2,657 ft), you reach <strong>Indoor Heated Sleep + Showers</strong>.
+          </p>
+          <div class="p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 text-xs text-amber-300 flex items-start gap-2">
+            <i class="fa-solid fa-circle-check mt-0.5 text-amber-400"></i>
+            <span><strong>Planned 1.5 to 2.5h Sleep:</strong> Highest quality sleep spot on the course before the quad-crushing 4,777 ft descent into Jerome.</span>
+          </div>
+        </div>
+
+        <div class="glass-card rounded-2xl p-5 gradient-border-purple hover:border-slate-700 transition">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-bold uppercase tracking-wider text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded border border-purple-500/20">Mental Checkpoint (Mile 211.1)</span>
+            <i class="fa-solid fa-brain text-purple-400"></i>
+          </div>
+          <h3 class="font-bold text-lg text-white mb-2">Fort Tuthill Evaluation</h3>
+          <p class="text-xs text-slate-300 leading-relaxed mb-3">
+            Race medical staff conducts a <strong>formal mental status evaluation</strong>. Extreme sleep deprivation and hallucinations peak here with only 42 miles remaining.
+          </p>
+          <div class="p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 text-xs text-purple-300 flex items-start gap-2">
+            <i class="fa-solid fa-notes-medical mt-0.5 text-purple-400"></i>
+            <span><strong>Drop Bag "A" Returns + 30-90m Rest:</strong> Reconnect with drop bag from Crown King. Fresh socks, hot calories, and pacer transition!</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Action Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <!-- Interactive Pacing Target Preview -->
+        <div class="glass-card rounded-2xl p-5 space-y-4">
+          <div class="flex items-center justify-between">
+            <h3 class="font-bold text-white flex items-center gap-2">
+              <i class="fa-solid fa-sliders text-amber-400"></i> Target Finish Pace Estimator
+            </h3>
+            <span class="text-xs text-slate-400">Adjust target time</span>
+          </div>
+
+          <div class="space-y-3">
+            <div>
+              <div class="flex justify-between text-xs font-medium text-slate-300 mb-1">
+                <span>Target Elapsed Time: <span id="quickTargetHoursLabel" class="text-amber-400 font-bold font-mono">110 hours</span></span>
+                <span class="text-slate-400">Max Cutoff: 125h</span>
+              </div>
+              <input type="range" id="quickTargetSlider" min="95" max="124" value="110" step="1" oninput="updateQuickEstimator()" class="w-full accent-amber-500 cursor-pointer">
+            </div>
+
+            <div class="grid grid-cols-3 gap-2.5 pt-2 text-center">
+              <div class="bg-slate-900/90 p-3 rounded-xl border border-slate-800">
+                <div class="text-[10px] text-slate-400 font-bold uppercase">Required Moving Speed</div>
+                <div id="quickMovingSpeed" class="text-lg font-black text-amber-400 font-mono mt-0.5">2.64 mph</div>
+                <div id="quickPaceMinMile" class="text-[11px] text-slate-400">22:43 / mi</div>
+              </div>
+              <div class="bg-slate-900/90 p-3 rounded-xl border border-slate-800">
+                <div class="text-[10px] text-slate-400 font-bold uppercase">Planned Sleep Total</div>
+                <div id="quickSleepTotal" class="text-lg font-black text-purple-400 font-mono mt-0.5">5.5 hours</div>
+                <div class="text-[11px] text-slate-400">Across 3-4 stations</div>
+              </div>
+              <div class="bg-slate-900/90 p-3 rounded-xl border border-slate-800">
+                <div class="text-[10px] text-slate-400 font-bold uppercase">Buffer Under Cutoff</div>
+                <div id="quickBufferHours" class="text-lg font-black text-emerald-400 font-mono mt-0.5">+15.0 hrs</div>
+                <div class="text-[11px] text-slate-400">Safety margin</div>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 text-xs text-slate-300 space-y-1">
+              <div class="font-semibold text-slate-200"><i class="fa-solid fa-compass text-amber-400 mr-1"></i> Pacing Golden Rule for Cocodona:</div>
+              <p>
+                "You cannot win or bank meaningful time in the first 100 miles, but you can destroy your stomach, destroy your quads, and end your race." Keep effort strictly in Zone 1-2 through Lane Mountain and Arrastra Creek.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mandatory Rules & Reminders from Sheet -->
+        <div class="glass-card rounded-2xl p-5 space-y-3.5">
+          <div class="flex items-center justify-between">
+            <h3 class="font-bold text-white flex items-center gap-2">
+              <i class="fa-solid fa-triangle-exclamation text-amber-400"></i> Official Race Rules & Drop Bag Directives
+            </h3>
+            <span class="status-badge badge-warn">Crucial Logistics</span>
+          </div>
+
+          <div class="space-y-2.5 text-xs text-slate-300">
+            <div class="p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 flex items-start gap-2.5">
+              <div class="w-6 h-6 rounded bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-xs shrink-0">1</div>
+              <div>
+                <strong class="text-white">One Direct-to-Finish Luggage:</strong> At the Start Line (Deep Canyon Ranch), runners can check one large luggage bag sent straight to Heritage Square.
+              </div>
+            </div>
+
+            <div class="p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 flex items-start gap-2.5">
+              <div class="w-6 h-6 rounded bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold text-xs shrink-0">2</div>
+              <div>
+                <strong class="text-white">Dual-Use Drop Bag (A):</strong> Drop bag placed at <em>Crown King (Mile 36.6)</em> is transported directly forward to <em>Fort Tuthill (Mile 211.1)</em>. One bag serves both critical checkpoints!
+              </div>
+            </div>
+
+            <div class="p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 flex items-start gap-2.5">
+              <div class="w-6 h-6 rounded bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-xs shrink-0">3</div>
+              <div>
+                <strong class="text-white">Used Drop Bag Pile:</strong> Move your bag to the "USED DROP BAG" pile immediately after finishing so race staff can transport it to Flagstaff before you arrive.
+              </div>
+            </div>
+
+            <div class="p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 flex items-start gap-2.5">
+              <div class="w-6 h-6 rounded bg-purple-500/20 text-purple-400 flex items-center justify-center font-bold text-xs shrink-0">4</div>
+              <div>
+                <strong class="text-white">Watson Lake Park Fee & Strict No-Pacer Zones:</strong> Watson Lake requires a $5/car entry fee. Schnebly Hill (mi 175.7) and Wildcat Hill (mi 234.2) are <em>Strictly No Pacer Drop/Exchange Zones</em> (NONE).
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Summary Elevation Chart Preview -->
+      <div class="glass-card rounded-2xl p-5 space-y-3">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <h3 class="font-bold text-white flex items-center gap-2">
+              <i class="fa-solid fa-chart-line text-amber-400"></i> Course Elevation Profile & Climbs
+            </h3>
+            <p class="text-xs text-slate-400">Total 253.5 Miles | +33,504 ft Climbing | -28,545 ft Descent</p>
+          </div>
+          <div class="flex items-center gap-2 text-xs">
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-amber-500/10 text-amber-400 border border-amber-500/30">
+              <span class="w-2 h-2 rounded-full bg-amber-400"></span> Climb Section
+            </span>
+          </div>
+        </div>
+        <div class="w-full h-72 relative">
+          <canvas id="overviewElevationChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2: AID STATIONS & CUTOFFS -->
+    <div id="tabContent-aid_stations" class="tab-panel hidden space-y-5">
+      <div class="glass-card rounded-2xl p-5 space-y-4">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <h2 class="text-lg font-bold text-white flex items-center gap-2">
+              <i class="fa-solid fa-flag-checkered text-amber-400"></i> 28 Official Aid Stations & Checkpoints
+            </h2>
+            <p class="text-xs text-slate-400">Filter by crew access, pacer exchange points, sleeping quarters, or drop bag stations.</p>
+          </div>
+          
+          <!-- Filters -->
+          <div class="flex flex-wrap items-center gap-2 text-xs">
+            <button id="filterBtn-all" onclick="filterAidStations('all')" class="aid-filter-btn px-3 py-1.5 rounded-lg bg-amber-500 text-slate-950 font-bold">All (28)</button>
+            <button id="filterBtn-crew" onclick="filterAidStations('crew')" class="aid-filter-btn px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white border border-slate-700">Crew Access (12)</button>
+            <button id="filterBtn-pacer" onclick="filterAidStations('pacer')" class="aid-filter-btn px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white border border-slate-700">Pacer Allowed (10)</button>
+            <button id="filterBtn-sleep" onclick="filterAidStations('sleep')" class="aid-filter-btn px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white border border-slate-700">Sleep Quarters (7)</button>
+            <button id="filterBtn-drop" onclick="filterAidStations('drop')" class="aid-filter-btn px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white border border-slate-700">Drop Bags (13)</button>
+          </div>
+        </div>
+
+        <!-- Aid Stations Table -->
+        <div class="overflow-x-auto custom-scrollbar border border-slate-800 rounded-xl">
+          <table class="w-full text-left text-xs text-slate-300">
+            <thead class="bg-slate-900/90 text-slate-400 uppercase tracking-wider font-semibold border-b border-slate-800">
+              <tr>
+                <th class="py-3 px-3.5">Mile</th>
+                <th class="py-3 px-3.5">Aid Station Name</th>
+                <th class="py-3 px-3.5">Cutoff Time (TOD)</th>
+                <th class="py-3 px-3">Crew</th>
+                <th class="py-3 px-3">Pacer</th>
+                <th class="py-3 px-3">Gear Check</th>
+                <th class="py-3 px-3">Drop Bags</th>
+                <th class="py-3 px-3">Sleep / Shower</th>
+                <th class="py-3 px-3">Medic</th>
+                <th class="py-3 px-3">Sock Change</th>
+              </tr>
+            </thead>
+            <tbody id="aidStationsTableBody" class="divide-y divide-slate-800/60 font-mono">
+              <!-- Dynamically populated via JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+        <!-- TAB 3: PACERS PLAN & ROSTER -->
+    <div id="tabContent-pacers" class="tab-panel hidden space-y-6">
+      
+      <!-- Community Standard & Official Aravaipa Rules Banner -->
+      <div class="glass-card rounded-2xl p-5 border-l-4 border-amber-500 space-y-4">
+        <div class="flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <div class="text-xs uppercase tracking-wider text-amber-400 font-bold">Research & Official Guidelines</div>
+            <h2 class="text-lg sm:text-xl font-bold text-white flex items-center gap-2">
+              <i class="fa-solid fa-person-running text-amber-400"></i> Cocodona 250 Pacer Rules & Community Recommendations
+            </h2>
+          </div>
+          <span class="status-badge badge-warn"><i class="fa-solid fa-circle-info"></i> Aravaipa 2027 Guidelines</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+          <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-1.5">
+            <div class="font-bold text-amber-400 flex items-center gap-1.5">
+              <i class="fa-solid fa-flag text-amber-400"></i> Official Pacer Windows
+            </div>
+            <p class="text-slate-300 leading-relaxed">
+              <strong>Pacing begins strictly at Mile 75.6 (Whiskey Row).</strong> The first 75.6 miles are solo for all runners. There are approximately <strong>178 miles</strong> remaining to the finish line where pacing is permitted.
+            </p>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-1.5">
+            <div class="font-bold text-rose-400 flex items-center gap-1.5">
+              <i class="fa-solid fa-ban text-rose-400"></i> Strict No-Pacer Zones
+            </div>
+            <p class="text-slate-300 leading-relaxed">
+              <strong>1. Schnebly Hill (mi 175.7) to Munds Park (mi 190.1):</strong> No pacers on course.<br>
+              <strong>2. Wildcat Hill (mi 234.2) to Heritage Square Finish (mi 253.5):</strong> Aravaipa prohibits pacers on the final ~19.3 miles.
+            </p>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-1.5">
+            <div class="font-bold text-emerald-400 flex items-center gap-1.5">
+              <i class="fa-solid fa-users text-emerald-400"></i> Recommended Pacer Count
+            </div>
+            <p class="text-slate-300 leading-relaxed">
+              Ultra community consensus recommends <strong>3 to 5 pacers</strong> as the golden middle ground (~25-45 mi/pacer). <strong>2 pacers</strong> is ultra-heavy (50-70 mi each), while <strong>6 pacers</strong> offers fresh, bite-sized shifts (~15-30 mi each).
+            </p>
+          </div>
+        </div>
+
+        <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800/80 text-xs text-slate-300 flex flex-wrap items-center justify-between gap-3">
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-scale-balanced text-amber-400"></i>
+            <span><strong>Rules Note:</strong> Pacers must check in at their starting aid station, wear an official pacer bib, be 18+, carry mandatory gear (GPS/phone with track loaded, 4L where required), and <em>cannot mule</em> gear for runners.</span>
+          </div>
+          <span class="text-slate-500 font-mono text-[11px]">1 Pacer per Runner on trail</span>
+        </div>
+      </div>
+
+      <!-- Strategy Selector Switcher -->
+      <div class="glass-card rounded-2xl p-5 space-y-4">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <h3 class="text-base sm:text-lg font-bold text-white flex items-center gap-2">
+              <i class="fa-solid fa-sliders text-amber-400"></i> Pacing Roster Configurations (2 to 6 Pacers)
+            </h3>
+            <p class="text-xs text-slate-400">Toggle between team sizes to see legal swap stations, leg distances, elevation challenges, and recommended pacer experience profiles.</p>
+          </div>
+
+          <!-- Configuration Selector Buttons -->
+          <div class="flex flex-wrap items-center gap-1.5 bg-slate-900 p-1.5 rounded-xl border border-slate-800 text-xs">
+            <button id="pacerModeBtn-2" onclick="setPacerPlan('2')" class="pacer-plan-toggle px-3 py-1.5 rounded-lg font-semibold text-slate-400 hover:text-white transition">
+              2 Pacers
+            </button>
+            <button id="pacerModeBtn-3A" onclick="setPacerPlan('3A')" class="pacer-plan-toggle px-3 py-1.5 rounded-lg font-bold bg-amber-500 text-slate-950 transition shadow">
+              3 Pacers
+            </button>
+            <button id="pacerModeBtn-4" onclick="setPacerPlan('4')" class="pacer-plan-toggle px-3 py-1.5 rounded-lg font-semibold text-slate-400 hover:text-white transition">
+              4 Pacers (Ideal)
+            </button>
+            <button id="pacerModeBtn-5" onclick="setPacerPlan('5')" class="pacer-plan-toggle px-3 py-1.5 rounded-lg font-semibold text-slate-400 hover:text-white transition">
+              5 Pacers
+            </button>
+            <button id="pacerModeBtn-6" onclick="setPacerPlan('6')" class="pacer-plan-toggle px-3 py-1.5 rounded-lg font-semibold text-slate-400 hover:text-white transition">
+              6 Pacers (Max Support)
+            </button>
+          </div>
+        </div>
+
+        <!-- 2-PACER STRATEGY VIEW -->
+        <div id="pacerPlanView-2" class="pacer-plan-view hidden space-y-4">
+          <div class="p-3.5 rounded-xl bg-purple-950/20 border border-purple-500/30 flex items-center justify-between text-xs">
+            <span class="text-purple-300 font-semibold"><i class="fa-solid fa-triangle-exclamation mr-1.5 text-purple-400"></i> <strong>2-Pacer Load:</strong> Demanding 50-70 miles per pacer. Suitable only for ultra-veterans.</span>
+            <span class="text-purple-400 font-mono font-bold">2 Legs Covered</span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="glass-card rounded-xl p-4.5 gradient-border-emerald space-y-2.5">
+              <div class="flex items-center justify-between">
+                <span class="status-badge badge-yes">Pacer #1</span>
+                <span class="text-xs font-bold text-emerald-400 font-mono">~65.0 Miles</span>
+              </div>
+              <div class="text-sm font-bold text-white">Whiskey Row (mi 75.6) &rarr; Dead Horse (mi 132.9) / Sedona (mi 159.1)</div>
+              <div class="text-xs text-slate-300 leading-relaxed">
+                <strong>Profile: Iron Endurance Ultra Runner.</strong> Carries Dean & Darin over Mingus Mountain (+2,657 ft ascent), the rocky descent into Jerome, and through the overnight desert miles into Dead Horse.
+              </div>
+              <div class="text-[11px] text-slate-400 pt-1 border-t border-slate-800">
+                Swap Station: Whiskey Row Aid Station (Monday evening)
+              </div>
+            </div>
+
+            <div class="glass-card rounded-xl p-4.5 gradient-border-purple space-y-2.5">
+              <div class="flex items-center justify-between">
+                <span class="status-badge badge-purple">Pacer #2</span>
+                <span class="text-xs font-bold text-purple-400 font-mono">~44.1 Miles</span>
+              </div>
+              <div class="text-sm font-bold text-white">Munds Park (mi 190.1) &rarr; Wildcat Hill (mi 234.2)</div>
+              <div class="text-xs text-slate-300 leading-relaxed">
+                <strong>Profile: High-Altitude & Cognitive Anchor.</strong> Critical mental support leg. Keeps runners alert through Fort Tuthill medical exam, navigates high elevation overnight into Walnut Canyon, and hands off at Wildcat Hill.
+              </div>
+              <div class="text-[11px] text-slate-400 pt-1 border-t border-slate-800">
+                Swap Station: Munds Park Aid Station (Thursday early AM)
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3-PACER STRATEGY VIEW -->
+        <div id="pacerPlanView-3A" class="pacer-plan-view space-y-4">
+          <div class="p-3.5 rounded-xl bg-amber-950/20 border border-amber-500/30 flex items-center justify-between text-xs">
+            <span class="text-amber-300 font-semibold"><i class="fa-solid fa-check-circle mr-1.5 text-amber-400"></i> <strong>3-Pacer Load:</strong> Lean, balanced setup from your original prep sheet (~35-48 miles each).</span>
+            <span class="text-amber-400 font-mono font-bold">3 Strategic Legs</span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="glass-card rounded-xl p-4.5 gradient-border-emerald space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="status-badge badge-yes">Pacer #1</span>
+                <span class="text-xs font-bold text-emerald-400 font-mono">~48.6 Miles</span>
+              </div>
+              <div class="text-sm font-bold text-white">Whiskey Row &rarr; Jerome</div>
+              <div class="text-xs text-slate-400">Mile 75.6 to Mile 124.2</div>
+              <div class="p-2.5 rounded-lg bg-slate-900/80 border border-slate-800 text-xs text-slate-300 space-y-1">
+                <div class="text-emerald-400 font-semibold">Profile: Least Experienced Friendly</div>
+                <p>Introduces pacing early. Keeps effort controlled through Prescott Valley/Watson Lake and anchors the big Mingus Mountain climb to the sleep shelter.</p>
+              </div>
+            </div>
+
+            <div class="glass-card rounded-xl p-4.5 gradient-border-amber space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="status-badge badge-warn">Pacer #2</span>
+                <span class="text-xs font-bold text-amber-400 font-mono">~34.9 Miles</span>
+              </div>
+              <div class="text-sm font-bold text-white">Jerome &rarr; Sedona Posse Grounds</div>
+              <div class="text-xs text-slate-400">Mile 124.2 to Mile 159.1</div>
+              <div class="p-2.5 rounded-lg bg-slate-900/80 border border-slate-800 text-xs text-slate-300 space-y-1">
+                <div class="text-amber-400 font-semibold">Profile: Moderate Experience</div>
+                <p>Covers the biggest overnight sleep deprivation window. Includes the descent into Jerome, Dead Horse night miles, and keeping spirits high into red rocks.</p>
+              </div>
+            </div>
+
+            <div class="glass-card rounded-xl p-4.5 gradient-border-rose space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="status-badge badge-alert">Pacer #3</span>
+                <span class="text-xs font-bold text-rose-400 font-mono">~44.1 Miles</span>
+              </div>
+              <div class="text-sm font-bold text-white">Munds Park &rarr; Wildcat Hill</div>
+              <div class="text-xs text-slate-400">Mile 190.1 to Mile 234.2</div>
+              <div class="p-2.5 rounded-lg bg-slate-900/80 border border-slate-800 text-xs text-slate-300 space-y-1">
+                <div class="text-rose-400 font-semibold">Profile: Strongest Pacer Required</div>
+                <p>The decisive leg of the race. Prepares runners for the mandatory Fort Tuthill cognitive test and navigates severe sleep debt before the final stretch.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4-PACER STRATEGY VIEW (COMMUNITY RECOMMENDED GOLDEN STANDARD) -->
+        <div id="pacerPlanView-4" class="pacer-plan-view hidden space-y-4">
+          <div class="p-3.5 rounded-xl bg-emerald-950/20 border border-emerald-500/30 flex items-center justify-between text-xs">
+            <span class="text-emerald-300 font-semibold"><i class="fa-solid fa-star mr-1.5 text-emerald-400"></i> <strong>4-Pacer Community Standard (Ideal):</strong> Manageable ~27-35 mile legs perfectly mapped to major sleep stations.</span>
+            <span class="text-emerald-400 font-mono font-bold">4 Major Segments</span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="glass-card rounded-xl p-4.5 gradient-border-emerald space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="status-badge badge-yes">Pacer #1</span>
+                <span class="text-xs font-bold text-emerald-400 font-mono">31.6 Miles</span>
+              </div>
+              <div class="text-sm font-bold text-white">Whiskey Row &rarr; Mingus Mtn</div>
+              <div class="text-xs text-slate-400">Mile 75.6 to Mile 107.2</div>
+              <div class="p-2.5 rounded-lg bg-slate-900/80 border border-slate-800 text-xs text-slate-300 space-y-1">
+                <div class="text-emerald-400 font-semibold">Shift: Prescott to Mingus Climb</div>
+                <p>Runs through Watson Lake and Fain Ranch, tackling the steady +2,657 ft climb to the heated sleep station at Mingus Mountain.</p>
+              </div>
+            </div>
+
+            <div class="glass-card rounded-xl p-4.5 gradient-border-blue space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="status-badge badge-blue">Pacer #2</span>
+                <span class="text-xs font-bold text-blue-400 font-mono">25.7 Miles</span>
+              </div>
+              <div class="text-sm font-bold text-white">Mingus Mtn &rarr; Dead Horse</div>
+              <div class="text-xs text-slate-400">Mile 107.2 to Mile 132.9</div>
+              <div class="p-2.5 rounded-lg bg-slate-900/80 border border-slate-800 text-xs text-slate-300 space-y-1">
+                <div class="text-blue-400 font-semibold">Shift: Jerome Quad-Buster</div>
+                <p>Fresh pacer handles the punishing 4,777 ft technical descent into Jerome and smooth rolling miles to Dead Horse night camp.</p>
+              </div>
+            </div>
+
+            <div class="glass-card rounded-xl p-4.5 gradient-border-amber space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="status-badge badge-warn">Pacer #3</span>
+                <span class="text-xs font-bold text-amber-400 font-mono">26.2 Miles</span>
+              </div>
+              <div class="text-sm font-bold text-white">Dead Horse &rarr; Sedona Posse</div>
+              <div class="text-xs text-slate-400">Mile 132.9 to Mile 159.1</div>
+              <div class="p-2.5 rounded-lg bg-slate-900/80 border border-slate-800 text-xs text-slate-300 space-y-1">
+                <div class="text-amber-400 font-semibold">Shift: Red Rock Crossing</div>
+                <p>Navigates Deer Pass and brings the runners into Sedona Posse Grounds for midday heat management and second scheduled sleep reset.</p>
+              </div>
+            </div>
+
+            <div class="glass-card rounded-xl p-4.5 gradient-border-rose space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="status-badge badge-alert">Pacer #4</span>
+                <span class="text-xs font-bold text-rose-400 font-mono">44.1 Miles</span>
+              </div>
+              <div class="text-sm font-bold text-white">Munds Park &rarr; Wildcat Hill</div>
+              <div class="text-xs text-slate-400">Mile 190.1 to Mile 234.2</div>
+              <div class="p-2.5 rounded-lg bg-slate-900/80 border border-slate-800 text-xs text-slate-300 space-y-1">
+                <div class="text-rose-400 font-semibold">Shift: Fort Tuthill Cognitive Push</div>
+                <p>Takes over after Schnebly gap. Anchors through Fort Tuthill cognitive test and Walnut Canyon, leading to final solo push.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5-PACER STRATEGY VIEW -->
+        <div id="pacerPlanView-5" class="pacer-plan-view hidden space-y-4">
+          <div class="p-3.5 rounded-xl bg-blue-950/20 border border-blue-500/30 flex items-center justify-between text-xs">
+            <span class="text-blue-300 font-semibold"><i class="fa-solid fa-shield-heart mr-1.5 text-blue-400"></i> <strong>5-Pacer Fresh Legs Strategy:</strong> Keeps all shifts between 17 and 32 miles. Ideal for dividing the grueling Munds Park-to-Wildcat segment.</span>
+            <span class="text-blue-400 font-mono font-bold">5 Focused Shifts</span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div class="glass-card rounded-xl p-4.5 gradient-border-emerald space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="status-badge badge-yes">Pacer #1</span>
+                <span class="text-xs font-bold text-emerald-400 font-mono">31.6 Miles</span>
+              </div>
+              <div class="text-sm font-bold text-white">Whiskey Row &rarr; Mingus Mtn</div>
+              <div class="text-xs text-slate-400">Mile 75.6 to Mile 107.2</div>
+              <p class="text-xs text-slate-300">Paces Watson Lake, Fain Ranch, and Mingus climb. Leaves runners at hot indoor sleep station.</p>
+            </div>
+
+            <div class="glass-card rounded-xl p-4.5 gradient-border-blue space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="status-badge badge-blue">Pacer #2</span>
+                <span class="text-xs font-bold text-blue-400 font-mono">25.7 Miles</span>
+              </div>
+              <div class="text-sm font-bold text-white">Mingus Mtn &rarr; Dead Horse</div>
+              <div class="text-xs text-slate-400">Mile 107.2 to Mile 132.9</div>
+              <p class="text-xs text-slate-300">Handles the quad-crushing descent into Jerome and smooth rolling miles into Dead Horse.</p>
+            </div>
+
+            <div class="glass-card rounded-xl p-4.5 gradient-border-amber space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="status-badge badge-warn">Pacer #3</span>
+                <span class="text-xs font-bold text-amber-400 font-mono">26.2 Miles</span>
+              </div>
+              <div class="text-sm font-bold text-white">Dead Horse &rarr; Sedona Posse</div>
+              <div class="text-xs text-slate-400">Mile 132.9 to Mile 159.1</div>
+              <p class="text-xs text-slate-300">Runs Deer Pass overnight/early morning and arrives into Sedona for scheduled rest.</p>
+            </div>
+
+            <div class="glass-card rounded-xl p-4.5 gradient-border-purple space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="status-badge badge-purple">Pacer #4</span>
+                <span class="text-xs font-bold text-purple-400 font-mono">21.0 Miles</span>
+              </div>
+              <div class="text-sm font-bold text-white">Munds Park &rarr; Fort Tuthill</div>
+              <div class="text-xs text-slate-400">Mile 190.1 to Mile 211.1</div>
+              <p class="text-xs text-slate-300">Fresh energetic pacer picks up runners at Munds Park and shepherds them to Fort Tuthill for the medical cognitive evaluation.</p>
+            </div>
+
+            <div class="glass-card rounded-xl p-4.5 gradient-border-rose space-y-2 sm:col-span-2 lg:col-span-1">
+              <div class="flex items-center justify-between">
+                <span class="status-badge badge-alert">Pacer #5</span>
+                <span class="text-xs font-bold text-rose-400 font-mono">23.1 Miles</span>
+              </div>
+              <div class="text-sm font-bold text-white">Fort Tuthill &rarr; Wildcat Hill</div>
+              <div class="text-xs text-slate-400">Mile 211.1 to Mile 234.2</div>
+              <p class="text-xs text-slate-300">Takes over immediately following Fort Tuthill sleep/evaluation and paces Walnut Canyon to the final no-pacer border at Wildcat Hill.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6-PACER STRATEGY VIEW (MAXIMUM CREW SUPPORT) -->
+        <div id="pacerPlanView-6" class="pacer-plan-view hidden space-y-4">
+          <div class="p-3.5 rounded-xl bg-rose-950/20 border border-rose-500/30 flex items-center justify-between text-xs">
+            <span class="text-rose-300 font-semibold"><i class="fa-solid fa-person-running mr-1.5 text-rose-400"></i> <strong>6-Pacer Maximum Rotation Strategy:</strong> Short, energetic shifts (~14-23 miles each). Perfect if multiple friends/family want to participate without running marathon distances.</span>
+            <span class="text-rose-400 font-mono font-bold">6 Bite-Sized Legs</span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div class="glass-card rounded-xl p-4 gradient-border-emerald space-y-1.5">
+              <div class="flex items-center justify-between">
+                <span class="status-badge badge-yes">Pacer #1</span>
+                <span class="text-xs font-bold text-emerald-400 font-mono">20.9 Miles</span>
+              </div>
+              <div class="text-sm font-bold text-white">Whiskey Row &rarr; Fain Ranch</div>
+              <div class="text-xs text-slate-400">Mile 75.6 to Mile 96.5</div>
+              <p class="text-xs text-slate-300">Flatter, accessible dirt roads and Watson Lake. Great for first-time pacers.</p>
+            </div>
+
+            <div class="glass-card rounded-xl p-4 gradient-border-blue space-y-1.5">
+              <div class="flex items-center justify-between">
+                <span class="status-badge badge-blue">Pacer #2</span>
+                <span class="text-xs font-bold text-blue-400 font-mono">10.7 Miles</span>
+              </div>
+              <div class="text-sm font-bold text-white">Fain Ranch &rarr; Mingus Mtn</div>
+              <div class="text-xs text-slate-400">Mile 96.5 to Mile 107.2</div>
+              <p class="text-xs text-slate-300">Short but steep uphill climbing specialist (+2,657 ft sustained climb to Mingus).</p>
+            </div>
+
+            <div class="glass-card rounded-xl p-4 gradient-border-amber space-y-1.5">
+              <div class="flex items-center justify-between">
+                <span class="status-badge badge-warn">Pacer #3</span>
+                <span class="text-xs font-bold text-amber-400 font-mono">25.7 Miles</span>
+              </div>
+              <div class="text-sm font-bold text-white">Mingus Mtn &rarr; Dead Horse</div>
+              <div class="text-xs text-slate-400">Mile 107.2 to Mile 132.9</div>
+              <p class="text-xs text-slate-300">Technical descent into Jerome town and through Verde Valley to Dead Horse.</p>
+            </div>
+
+            <div class="glass-card rounded-xl p-4 gradient-border-purple space-y-1.5">
+              <div class="flex items-center justify-between">
+                <span class="status-badge badge-purple">Pacer #4</span>
+                <span class="text-xs font-bold text-purple-400 font-mono">26.2 Miles</span>
+              </div>
+              <div class="text-sm font-bold text-white">Dead Horse &rarr; Sedona Posse</div>
+              <div class="text-xs text-slate-400">Mile 132.9 to Mile 159.1</div>
+              <p class="text-xs text-slate-300">Scenic red rocks section through Deer Pass into Sedona Posse Grounds.</p>
+            </div>
+
+            <div class="glass-card rounded-xl p-4 gradient-border-rose space-y-1.5">
+              <div class="flex items-center justify-between">
+                <span class="status-badge badge-alert">Pacer #5</span>
+                <span class="text-xs font-bold text-rose-400 font-mono">21.0 Miles</span>
+              </div>
+              <div class="text-sm font-bold text-white">Munds Park &rarr; Fort Tuthill</div>
+              <div class="text-xs text-slate-400">Mile 190.1 to Mile 211.1</div>
+              <p class="text-xs text-slate-300">Crucial mental encouragement leg through pine forests into Fort Tuthill evaluation.</p>
+            </div>
+
+            <div class="glass-card rounded-xl p-4 gradient-border-blue space-y-1.5">
+              <div class="flex items-center justify-between">
+                <span class="status-badge badge-blue">Pacer #6</span>
+                <span class="text-xs font-bold text-blue-400 font-mono">23.1 Miles</span>
+              </div>
+              <div class="text-sm font-bold text-white">Fort Tuthill &rarr; Wildcat Hill</div>
+              <div class="text-xs text-slate-400">Mile 211.1 to Mile 234.2</div>
+              <p class="text-xs text-slate-300">High energy pacer escorts through Walnut Canyon, setting up the final solo finish.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Master Pacer Transition Timeline Map -->
+        <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 space-y-3">
+          <h4 class="font-bold text-sm text-white flex items-center gap-2">
+            <i class="fa-solid fa-route text-amber-400"></i> Course Pacing Timeline & Access Rules Across 253.5 Miles
+          </h4>
+          <div class="space-y-2.5 text-xs">
+            <div class="flex flex-wrap items-center gap-3 p-3 rounded-lg bg-slate-800/60 border border-slate-700/60">
+              <div class="w-24 text-slate-400 font-mono font-bold">Mi 0 - 75.6</div>
+              <div class="flex-1">
+                <span class="text-white font-semibold">Stage 1: Mandatory Solo Running (Deep Canyon Ranch &rarr; Whiskey Row)</span>
+                <p class="text-slate-400">No pacers allowed on course. Dean & Darin run tandem through Cottonwood Creek, Lane Mountain, Crown King, and Kamp Kipa. Crew support available at designated points.</p>
+              </div>
+              <span class="status-badge badge-no">No Pacers</span>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-3 p-3 rounded-lg bg-emerald-950/20 border border-emerald-500/30">
+              <div class="w-24 text-emerald-400 font-mono font-bold">Mi 75.6 - 159.1</div>
+              <div class="flex-1">
+                <span class="text-white font-semibold">Stage 2: Core Pacing Block (Whiskey Row &rarr; Sedona Posse Grounds)</span>
+                <p class="text-slate-300">Pacer access at Whiskey Row, Watson Lake, Fain Ranch, Mingus Mtn, Jerome, Dead Horse, and Sedona Posse Grounds. Pacer rotation handles Mingus climb and Jerome drop.</p>
+              </div>
+              <span class="status-badge badge-yes">Pacers Active</span>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-3 p-3 rounded-lg bg-rose-950/20 border border-rose-500/30">
+              <div class="w-24 text-rose-400 font-mono font-bold">Mi 159.1 - 190.1</div>
+              <div class="flex-1">
+                <span class="text-white font-semibold">Stage 3: Schnebly Gap Rule (Sedona &rarr; Schnebly Hill &rarr; Munds Park)</span>
+                <p class="text-slate-300">Pacer may accompany from Sedona to Schnebly Hill (mi 175.7). <strong>Schnebly Hill to Munds Park (14.4 mi) is a strict NO PACER section.</strong> Pacers re-enter at Munds Park.</p>
+              </div>
+              <span class="status-badge badge-alert">Schnebly Gap</span>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-3 p-3 rounded-lg bg-purple-950/20 border border-purple-500/30">
+              <div class="w-24 text-purple-400 font-mono font-bold">Mi 190.1 - 234.2</div>
+              <div class="flex-1">
+                <span class="text-white font-semibold">Stage 4: Flagstaff High-Altitude Block (Munds Park &rarr; Wildcat Hill)</span>
+                <p class="text-slate-300">Pacer access at Munds Park, Fort Tuthill, and Walnut Canyon. Pacer navigates night hours, passes Fort Tuthill medical cognitive test, and guides to Wildcat Hill.</p>
+              </div>
+              <span class="status-badge badge-purple">Pacers Active</span>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-3 p-3 rounded-lg bg-slate-800/60 border border-slate-700/60">
+              <div class="w-24 text-slate-400 font-mono font-bold">Mi 234.2 - 253.5</div>
+              <div class="flex-1">
+                <span class="text-white font-semibold">Stage 5: Final Solo Push to Flagstaff Heritage Square (19.3 Miles)</span>
+                <p class="text-slate-400">Wildcat Hill is a strict NO PACER drop point. Dean & Darin complete the final mountain stretch through Trinity Heights and into Heritage Square finish together.</p>
+              </div>
+              <span class="status-badge badge-no">Finish Solo</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+<!-- TAB 4: SLEEP PLAN & TRAIL NAPS -->
+    <div id="tabContent-sleep" class="tab-panel hidden space-y-5">
+      <div class="glass-card rounded-2xl p-5 space-y-4">
+        <div>
+          <h2 class="text-lg font-bold text-white flex items-center gap-2">
+            <i class="fa-solid fa-bed text-amber-400"></i> Sleep Strategy & Strategic Trail Naps
+          </h2>
+          <p class="text-xs text-slate-400">Cocodona 250 requires deliberate sleep planning. Hallucinations and cognitive decline begin around Hour 40-50 without targeted micro-rests.</p>
+        </div>
+
+        <!-- Major Sleep Checkpoints Table -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          
+          <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-amber-400">Mile 60.8</span>
+              <span class="status-badge badge-warn">Trail Nap Only</span>
+            </div>
+            <div class="text-sm font-bold text-white">Kamp Kipa</div>
+            <div class="text-xs text-slate-400">Indoor Heated | Medic Available</div>
+            <div class="p-2.5 rounded bg-slate-950 text-xs text-slate-300 border border-slate-800">
+              <span class="text-amber-400 font-semibold">Plan: 20-30 min nap</span>
+              <p class="mt-1">Too early for deep sleep; adrenaline still elevated. Take a quick dirt nap if eyes are burning to bank miles before heat.</p>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-xl bg-slate-900 border border-emerald-500/40 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-emerald-400">Mile 107.2</span>
+              <span class="status-badge badge-yes">Primary Anchor Sleep</span>
+            </div>
+            <div class="text-sm font-bold text-white">Mingus Mountain</div>
+            <div class="text-xs text-slate-400">Indoor Heated + Showers + Crew</div>
+            <div class="p-2.5 rounded bg-slate-950 text-xs text-slate-300 border border-slate-800">
+              <span class="text-emerald-400 font-semibold">Plan: 1.5 to 2.5 Hours</span>
+              <p class="mt-1">Crucial milestone. 100+ miles done, major climb conquered. Highest sleep shelter quality on course before descending into Jerome.</p>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-xl bg-slate-900 border border-purple-500/40 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-purple-400">Mile 159.1 & 211.1</span>
+              <span class="status-badge badge-purple">Cognitive Resets</span>
+            </div>
+            <div class="text-sm font-bold text-white">Sedona & Fort Tuthill</div>
+            <div class="text-xs text-slate-400">Indoor Heated Quarters</div>
+            <div class="p-2.5 rounded bg-slate-950 text-xs text-slate-300 border border-slate-800">
+              <span class="text-purple-400 font-semibold">Plan: 60-90 min each</span>
+              <p class="mt-1">Prevents catastrophic hallucinations and ensures passing the Fort Tuthill medical status cognitive exam.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Full Sleep Guide & Stations -->
+        <div class="overflow-x-auto custom-scrollbar border border-slate-800 rounded-xl">
+          <table class="w-full text-left text-xs text-slate-300">
+            <thead class="bg-slate-900/90 text-slate-400 uppercase tracking-wider font-semibold border-b border-slate-800">
+              <tr>
+                <th class="py-3 px-3.5">Mile</th>
+                <th class="py-3 px-3.5">Aid Station</th>
+                <th class="py-3 px-3.5">Quarters Type</th>
+                <th class="py-3 px-3.5">Sleep Time</th>
+                <th class="py-3 px-3.5">Trail Nap</th>
+                <th class="py-3 px-4">Tactical Rationale</th>
+              </tr>
+            </thead>
+            <tbody id="sleepPlanTableBody" class="divide-y divide-slate-800/60">
+              <!-- Dynamically populated via JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 5: ELEVATION CHANGE & PROFILE -->
+    <div id="tabContent-elevation" class="tab-panel hidden space-y-5">
+      <div class="glass-card rounded-2xl p-5 space-y-4">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <h2 class="text-lg font-bold text-white flex items-center gap-2">
+              <i class="fa-solid fa-triangle-exclamation text-amber-400"></i> Course Elevation Profile & Critical Crux Zones
+            </h2>
+            <p class="text-xs text-slate-400">Highlights sections by steepness, difficulty, and danger zones to help Dean & Darin plan pacing and leg preservation.</p>
+          </div>
+          <div class="flex items-center gap-2 text-xs">
+            <button id="elevFilterBtn-all" onclick="filterElevationSections('all')" class="elev-filter-btn px-3 py-1.5 rounded-lg bg-amber-500 text-slate-950 font-bold">All 26 Sections</button>
+            <button id="elevFilterBtn-crux" onclick="filterElevationSections('crux')" class="elev-filter-btn px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white border border-slate-700">Critical Crux Zones</button>
+            <button id="elevFilterBtn-climb" onclick="filterElevationSections('climb')" class="elev-filter-btn px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white border border-slate-700">Major Climbs</button>
+            <button id="elevFilterBtn-descent" onclick="filterElevationSections('descent')" class="elev-filter-btn px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white border border-slate-700">Steep Descents</button>
+          </div>
+        </div>
+
+        <!-- Course Climbing by Section Chart (Replacing confusing cumulative line) -->
+        <div class="w-full h-80 relative bg-slate-950/60 rounded-xl p-3 border border-slate-800">
+          <canvas id="detailedElevationChart"></canvas>
+        </div>
+
+        <!-- Key Strategic Danger Zones Alert Callouts -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-3 text-xs">
+          <div class="p-3 rounded-xl bg-rose-950/20 border border-rose-500/30">
+            <div class="font-bold text-rose-400 flex items-center gap-1.5 mb-1">
+              <i class="fa-solid fa-fire text-rose-400"></i> Mile 7.4 &rarr; 32.5 (Bradshaws)
+            </div>
+            <p class="text-slate-300">+8,500 ft climbing in blistering heat. Back-of-pack takes 13+ hrs. Steep 30-40 min/mile climb. Carry 4L water!</p>
+          </div>
+          <div class="p-3 rounded-xl bg-amber-950/20 border border-amber-500/30">
+            <div class="font-bold text-amber-400 flex items-center gap-1.5 mb-1">
+              <i class="fa-solid fa-mountain text-amber-400"></i> Mile 96.5 &rarr; 107.2 (Mingus Mtn)
+            </div>
+            <p class="text-slate-300">+2,657 ft sustained climb with only 69 ft descent. Steady hiking stride needed before the Mingus sleep station.</p>
+          </div>
+          <div class="p-3 rounded-xl bg-purple-950/20 border border-purple-500/30">
+            <div class="font-bold text-purple-400 flex items-center gap-1.5 mb-1">
+              <i class="fa-solid fa-angles-down text-purple-400"></i> Mile 107.2 &rarr; 124.2 (Jerome Drop)
+            </div>
+            <p class="text-slate-300">-4,777 ft technical rocky descent with +2,051 ft extra climbs mixed in. Extreme quad stress; protect knees & feet.</p>
+          </div>
+          <div class="p-3 rounded-xl bg-blue-950/20 border border-blue-500/30">
+            <div class="font-bold text-blue-400 flex items-center gap-1.5 mb-1">
+              <i class="fa-solid fa-flag-checkered text-blue-400"></i> Mile 234.2 &rarr; 249.5 (Trinity)
+            </div>
+            <p class="text-slate-300">+3,114 ft gain / -2,746 ft loss. Brutal late-race mountain rollers at high elevation on raw, exhausted legs.</p>
+          </div>
+        </div>
+
+        <!-- Elevation Sections Table (Enhanced with Crux Badges) -->
+        <div class="overflow-x-auto custom-scrollbar border border-slate-800 rounded-xl">
+          <table class="w-full text-left text-xs text-slate-300">
+            <thead class="bg-slate-900/90 text-slate-400 uppercase tracking-wider font-semibold border-b border-slate-800">
+              <tr>
+                <th class="py-3 px-3.5">Section</th>
+                <th class="py-3 px-3">Distance</th>
+                <th class="py-3 px-3">Gain</th>
+                <th class="py-3 px-3">Loss</th>
+                <th class="py-3 px-3.5">Difficulty / Crux</th>
+                <th class="py-3 px-4">Tactical Course Guidance</th>
+              </tr>
+            </thead>
+            <tbody id="elevationTableBody" class="divide-y divide-slate-800/60 font-mono">
+              <!-- Dynamically populated via JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 6: PACE & ETA CALCULATOR -->
+    <div id="tabContent-calculator" class="tab-panel hidden space-y-5">
+      <div class="glass-card rounded-2xl p-5 space-y-4">
+        <div>
+          <h2 class="text-lg font-bold text-white flex items-center gap-2">
+            <i class="fa-solid fa-calculator text-amber-400"></i> Dynamic Pace, Aid Station ETA & Cutoff Margin Simulator
+          </h2>
+          <p class="text-xs text-slate-400">Fine-tune your planned overall pace or target hours to see arrival times and buffer against official cutoffs at every aid station.</p>
+        </div>
+
+        <!-- Calculator Controls -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 rounded-xl bg-slate-900 border border-slate-800">
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Target Finish Time (Hours)</label>
+            <div class="flex items-center gap-2">
+              <input type="number" id="calcTargetHours" value="110" min="80" max="124" step="1" onchange="runPaceCalculator()" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-1.5 text-sm font-mono text-amber-400 font-bold focus:outline-none focus:border-amber-500">
+              <span class="text-xs text-slate-400">hrs</span>
+            </div>
+            <div class="text-[11px] text-slate-500 mt-1">Official Race Cutoff is 125.0 hours</div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Aid Station & Major Sleep Stoppage</label>
+            <div class="flex items-center gap-2">
+              <input type="number" id="calcStopHours" value="14" min="4" max="30" step="1" onchange="runPaceCalculator()" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-1.5 text-sm font-mono text-purple-400 font-bold focus:outline-none focus:border-amber-500">
+              <span class="text-xs text-slate-400">hrs</span>
+            </div>
+            <div class="text-[11px] text-slate-500 mt-1">Sleep stations (Mingus, Sedona, Tuthill) + aid station transitions</div>
+          </div>
+
+          <div class="flex flex-col justify-center">
+            <div class="text-xs text-slate-400 font-medium">Resulting Required Moving Pace:</div>
+            <div class="flex items-baseline gap-2 mt-1">
+              <span id="calcMovingSpeedText" class="text-2xl font-black text-amber-400 font-mono">2.64 mph</span>
+              <span id="calcMinMileText" class="text-xs font-mono text-slate-300">(22:43 / mile)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- NEW: Dedicated Trail Rest & Back Decompression Break Simulator -->
+        <div class="p-4 rounded-xl bg-slate-900/90 border border-amber-500/40 space-y-3.5">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <div class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold">
+                <i class="fa-solid fa-person-shelter"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-sm text-white">Trail Rest & Back Decompression Planner</h3>
+                <p class="text-[11px] text-slate-400">Simulate laying flat on the ground to elevate feet and decompress back muscles between aid stations.</p>
+              </div>
+            </div>
+            <span id="restImpactBadge" class="status-badge badge-yes font-mono font-bold">Safe Under Cutoff</span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 text-xs">
+            <div>
+              <label class="block font-medium text-slate-300 mb-1">Rest Frequency</label>
+              <div class="flex items-center gap-1.5">
+                <span class="text-slate-400">Every</span>
+                <input type="number" id="calcRestIntervalHours" value="4" min="1" max="12" step="0.5" onchange="runPaceCalculator()" class="w-20 bg-slate-950 border border-slate-700 rounded px-2.5 py-1.5 text-amber-400 font-bold font-mono focus:border-amber-500 text-center">
+                <span class="text-slate-400">hours of running</span>
+              </div>
+            </div>
+
+            <div>
+              <label class="block font-medium text-slate-300 mb-1">Break Duration</label>
+              <div class="flex items-center gap-1.5">
+                <span class="text-slate-400">Lay down for</span>
+                <input type="number" id="calcRestDurationMins" value="15" min="5" max="60" step="5" onchange="runPaceCalculator()" class="w-20 bg-slate-950 border border-slate-700 rounded px-2.5 py-1.5 text-purple-400 font-bold font-mono focus:border-purple-500 text-center">
+                <span class="text-slate-400">minutes</span>
+              </div>
+            </div>
+
+            <div class="p-2.5 rounded-lg bg-slate-950 border border-slate-800 text-center">
+              <div class="text-[10px] text-slate-400 uppercase font-semibold">Total Trail Rests Taken</div>
+              <div id="calcRestTotalCount" class="text-base font-bold text-amber-400 font-mono mt-0.5">24 breaks</div>
+              <div id="calcRestTotalHours" class="text-[11px] text-slate-400">+6.0 hrs total added</div>
+            </div>
+
+            <div class="p-2.5 rounded-lg bg-slate-950 border border-slate-800 text-center">
+              <div class="text-[10px] text-slate-400 uppercase font-semibold">Projected Finish & Cutoff Risk</div>
+              <div id="calcRestProjectedFinish" class="text-base font-bold text-emerald-400 font-mono mt-0.5">116.0 hrs</div>
+              <div id="calcRestCutoffBuffer" class="text-[11px] text-slate-300">+9.0 hrs buffer</div>
+            </div>
+          </div>
+
+          <div id="calcRestRiskAdvisory" class="p-2.5 rounded-lg bg-slate-950/80 border border-slate-800 text-[11px] text-slate-300 flex items-center gap-2">
+            <i class="fa-solid fa-circle-check text-emerald-400"></i>
+            <span><strong>Tactical Impact:</strong> Laying down 15 min every 4 hrs adds 6.0 hours total. Dean & Darin remain safely 9.0 hours ahead of the 125-hour cutoff while protecting their lumbar spine!</span>
+          </div>
+        </div>
+
+        <!-- Generated Station ETA Table -->
+        <div class="overflow-x-auto custom-scrollbar border border-slate-800 rounded-xl">
+          <table class="w-full text-left text-xs text-slate-300">
+            <thead class="bg-slate-900/90 text-slate-400 uppercase tracking-wider font-semibold border-b border-slate-800">
+              <tr>
+                <th class="py-3 px-3.5">Mile</th>
+                <th class="py-3 px-3.5">Aid Station</th>
+                <th class="py-3 px-3">Est Elapsed</th>
+                <th class="py-3 px-3">Est Arrival (TOD)</th>
+                <th class="py-3 px-3">Official Cutoff</th>
+                <th class="py-3 px-3">Cutoff Buffer Margin</th>
+                <th class="py-3 px-3">Status</th>
+              </tr>
+            </thead>
+            <tbody id="calculatorScheduleTableBody" class="divide-y divide-slate-800/60 font-mono">
+              <!-- Dynamically populated via JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 7: GEAR LIST & CHECKLIST -->
+    <div id="tabContent-gear" class="tab-panel hidden space-y-5">
+      <div class="glass-card rounded-2xl p-5 space-y-5">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <h2 class="text-lg font-bold text-white flex items-center gap-2">
+              <i class="fa-solid fa-clipboard-check text-amber-400"></i> Cocodona 250 Gear & Equipment Checklist
+            </h2>
+            <p class="text-xs text-slate-400">Best-in-practice generic packing checklist for individual runners and generic pacers. Check off what you have to see what you still need to acquire!</p>
+          </div>
+          <div class="flex items-center gap-2 text-xs">
+            <button onclick="resetGearChecklist()" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition flex items-center gap-1.5">
+              <i class="fa-solid fa-rotate-left"></i> Reset Current Roster
+            </button>
+            <span id="gearProgressText" class="px-3 py-1.5 rounded-lg bg-amber-500/20 text-amber-400 border border-amber-500/40 font-bold font-mono">
+              0 / 0 Checked
+            </span>
+          </div>
+        </div>
+
+        <!-- Roster Selector Sub-Tabs -->
+        <div class="flex flex-wrap items-center justify-between gap-3 p-2 rounded-xl bg-slate-900/80 border border-slate-800">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="text-xs font-semibold text-slate-400 mr-1 flex items-center gap-1.5">
+              <i class="fa-solid fa-user-tag text-amber-400"></i> Packing For:
+            </span>
+            <button onclick="setGearRoster('dean')" id="gearRosterBtn-dean" class="gear-roster-btn px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1.5 bg-amber-500 text-slate-950 shadow">
+              <i class="fa-solid fa-person-running"></i> Dean (Racer)
+            </button>
+            <button onclick="setGearRoster('darin')" id="gearRosterBtn-darin" class="gear-roster-btn px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition flex items-center gap-1.5">
+              <i class="fa-solid fa-person-running"></i> Darin (Racer)
+            </button>
+            <button onclick="setGearRoster('pacer')" id="gearRosterBtn-pacer" class="gear-roster-btn px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition flex items-center gap-1.5">
+              <i class="fa-solid fa-user-group text-blue-400"></i> Generic Pacer (Shift Ready)
+            </button>
+          </div>
+          <div id="gearRosterDescription" class="text-xs text-slate-400 font-mono">
+            Racer 250M Kit: Mandatories, desert heat, alpine freeze & drop bags
+          </div>
+        </div>
+
+        <!-- Missing / Needed Summary Callout -->
+        <div id="gearMissingSummary" class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 flex flex-wrap items-center justify-between gap-3 text-xs">
+          <!-- Dynamically populated via JS -->
+        </div>
+
+        <div id="gearCategoriesContainer" class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <!-- Dynamically populated via JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 8: FUELING & HYDRATION CALCULATOR -->
+    <div id="tabContent-nutrition" class="tab-panel hidden space-y-5">
+      <div class="glass-card rounded-2xl p-5 space-y-4">
+        <div>
+          <h2 class="text-lg font-bold text-white flex items-center gap-2">
+            <i class="fa-solid fa-bottle-water text-amber-400"></i> Ultra-Endurance Nutrition & Hydration Blueprint
+          </h2>
+          <p class="text-xs text-slate-400">Based on ACSM sports nutrition protocols and tailored for Cocodona 250's extreme heat and 250-mile duration.</p>
+        </div>
+
+        <!-- Personalized Nutrition Calculator -->
+        <div class="p-5 rounded-2xl bg-gradient-to-br from-slate-900 to-slate-950 border border-slate-800 space-y-4">
+          <div class="flex items-center justify-between">
+            <h3 class="font-bold text-sm text-white flex items-center gap-2">
+              <i class="fa-solid fa-sliders text-amber-400"></i> Runner Body & Sweat Profile Calculator
+            </h3>
+            <span class="text-xs text-slate-400">Calibrates hourly fuel intake</span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">Average Runner Body Weight</label>
+              <div class="flex items-center gap-2">
+                <input type="number" id="nutWeightLbs" value="165" min="110" max="250" oninput="calculateNutritionTargets()" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5 text-sm font-mono text-amber-400 font-bold focus:outline-none focus:border-amber-500">
+                <span class="text-xs text-slate-400">lbs</span>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">Expected Temperature / Section</label>
+              <select id="nutTempLevel" onchange="calculateNutritionTargets()" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-xs font-medium text-slate-200 focus:outline-none focus:border-amber-500">
+                <option value="hot">Desert Highs (85F - 95F+ | Cottonwood/Lane Mtn)</option>
+                <option value="moderate" selected>Moderate Day (65F - 80F)</option>
+                <option value="cool">High Elevation Night (35F - 50F | Mingus/Flagstaff)</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">Sweat / Sodium Tendency</label>
+              <select id="nutSweatLevel" onchange="calculateNutritionTargets()" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-xs font-medium text-slate-200 focus:outline-none focus:border-amber-500">
+                <option value="heavy">Heavy / Salty Sweater (White salt rings on cap)</option>
+                <option value="moderate" selected>Moderate Sweater</option>
+                <option value="light">Light Sweater</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Calculated Targets Cards -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+            <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 text-center">
+              <div class="text-[10px] uppercase font-bold text-slate-400">Hourly Carbs</div>
+              <div id="nutTargetCarbs" class="text-xl font-black text-amber-400 font-mono mt-0.5">50 - 65 g</div>
+              <div class="text-[10px] text-slate-400 mt-0.5">200 - 260 kcal/hr</div>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 text-center">
+              <div class="text-[10px] uppercase font-bold text-slate-400">Hourly Fluids</div>
+              <div id="nutTargetFluids" class="text-xl font-black text-blue-400 font-mono mt-0.5">500 - 750 mL</div>
+              <div class="text-[10px] text-slate-400 mt-0.5">17 - 25 oz / hr</div>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 text-center">
+              <div id="nutTargetSodium" class="text-[10px] uppercase font-bold text-slate-400">Hourly Sodium</div>
+              <div id="nutTargetSodiumVal" class="text-xl font-black text-emerald-400 font-mono mt-0.5">400 - 600 mg</div>
+              <div class="text-[10px] text-slate-400 mt-0.5">Prevents hyponatremia</div>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 text-center">
+              <div class="text-[10px] uppercase font-bold text-slate-400">Total Race Calories</div>
+              <div id="nutTargetTotalKcal" class="text-xl font-black text-purple-400 font-mono mt-0.5">~24,500 kcal</div>
+              <div class="text-[10px] text-slate-400 mt-0.5">Over 110h elapsed</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3-Hour Fueling Loop Template & Real Foods -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 space-y-3">
+            <h3 class="font-bold text-sm text-white flex items-center gap-2">
+              <i class="fa-solid fa-clock-rotate-left text-amber-400"></i> The Reliable 3-Hour Fueling Loop
+            </h3>
+            <p class="text-xs text-slate-400">Repeat this cycle every 3 hours while moving to eliminate stomach shutdown:</p>
+
+            <div class="space-y-2 text-xs font-mono">
+              <div class="p-2.5 rounded-lg bg-slate-950 border border-slate-800 flex justify-between items-center">
+                <span class="text-amber-400 font-bold">0:25 into run:</span>
+                <span class="text-slate-300">Gel / Chews (~25g carbs) + 4-6 sips water</span>
+              </div>
+              <div class="p-2.5 rounded-lg bg-slate-950 border border-slate-800 flex justify-between items-center">
+                <span class="text-amber-400 font-bold">0:55 into run:</span>
+                <span class="text-slate-300">Liquid Electrolyte sip (~200mg sodium) + small real food bite</span>
+              </div>
+              <div class="p-2.5 rounded-lg bg-slate-950 border border-slate-800 flex justify-between items-center">
+                <span class="text-amber-400 font-bold">1:25 into run:</span>
+                <span class="text-slate-300">Second Gel or stroopwafel (~25g carbs)</span>
+              </div>
+              <div class="p-2.5 rounded-lg bg-slate-950 border border-slate-800 flex justify-between items-center">
+                <span class="text-amber-400 font-bold">1:55 into run:</span>
+                <span class="text-slate-300">Real solid carbs (boiled potato with salt, tortilla, pretzel)</span>
+              </div>
+              <div class="p-2.5 rounded-lg bg-slate-950 border border-slate-800 flex justify-between items-center">
+                <span class="text-amber-400 font-bold">2:25 into run:</span>
+                <span class="text-slate-300">Gel / Chews (~25g carbs)</span>
+              </div>
+              <div class="p-2.5 rounded-lg bg-slate-950 border border-slate-800 flex justify-between items-center">
+                <span class="text-amber-400 font-bold">2:55 into run:</span>
+                <span class="text-slate-300">Broth / Soup / Salt cap at upcoming aid station</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 space-y-3">
+            <h3 class="font-bold text-sm text-white flex items-center gap-2">
+              <i class="fa-solid fa-bowl-food text-emerald-400"></i> Aid Station Real Food Strategy
+            </h3>
+            <p class="text-xs text-slate-400">After 24+ hours, sweet gel fatigue is inevitable. Keep these real food staples ready in crew bins:</p>
+
+            <div class="grid grid-cols-2 gap-2 text-xs">
+              <div class="p-2.5 rounded-lg bg-slate-950 border border-slate-800">
+                <div class="font-bold text-emerald-400">Salty & Savory</div>
+                <ul class="text-slate-400 space-y-0.5 mt-1 list-disc list-inside">
+                  <li>Boiled baby potatoes rolled in sea salt</li>
+                  <li>Chicken / ramen broth (hydrates + sodium)</li>
+                  <li>Quesadillas & bacon strips</li>
+                  <li>Avocado salted sourdough slices</li>
+                </ul>
+              </div>
+
+              <div class="p-2.5 rounded-lg bg-slate-950 border border-slate-800">
+                <div class="font-bold text-amber-400">Easy Digestion Carbs</div>
+                <ul class="text-slate-400 space-y-0.5 mt-1 list-disc list-inside">
+                  <li>White rice balls with soy sauce</li>
+                  <li>Applesauce / baby food pouches</li>
+                  <li>Watermelon cubes with salt</li>
+                  <li>Canned peaches / mandarin oranges</li>
+                </ul>
+              </div>
+
+              <div class="p-2.5 rounded-lg bg-slate-950 border border-slate-800">
+                <div class="font-bold text-purple-400">Post-Sleep Anchor Meals</div>
+                <ul class="text-slate-400 space-y-0.5 mt-1 list-disc list-inside">
+                  <li>Scrambled eggs + hash browns</li>
+                  <li>Pancakes with maple syrup</li>
+                  <li>Chocolate milk + banana</li>
+                  <li>Greek yogurt with granola & honey</li>
+                </ul>
+              </div>
+
+              <div class="p-2.5 rounded-lg bg-slate-950 border border-slate-800">
+                <div class="font-bold text-rose-400">Stomach Reset Protocols</div>
+                <ul class="text-slate-400 space-y-0.5 mt-1 list-disc list-inside">
+                  <li>Ginger chews / ginger ale</li>
+                  <li>Peppermint tea</li>
+                  <li>Pickle juice sips (cramp relief)</li>
+                  <li>Slow down pace 10% until GI settles</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800 bg-slate-950 text-slate-500 py-6 text-xs text-center">
+    <div class="max-w-7xl mx-auto px-4 space-y-1">
+      <p>Cocodona 250 Pacer & Crew Command Portal | Designed for Dean & Darin | May 2 - 7, 2027</p>
+      <p class="text-slate-600">Built from personal prep documentation, official Aravaipa course guides, and ultra-running pacing guidelines.</p>
+    </div>
+  </footer>
+
+  <script>
+    const RACE_DATA = {"aid_stations": [{"station": "Start Line - Deep Canyon Ranch", "mile": 0.0, "mile_str": "0", "cutoff": "-", "crew": "Yes", "pacer": "-", "gear": "4L Cap", "drop_bags": "Yes", "sleep_shower": "-", "medic": "-", "mand_sock_change": false, "sleep_time": null, "trail_nap": null, "sleep_why": null}, {"station": "Cottonwood Creek", "mile": 7.4, "mile_str": "7.4", "cutoff": "Sun 9:50 AM", "crew": "-", "pacer": "-", "gear": "4L", "drop_bags": "-", "sleep_shower": "-", "medic": "-", "mand_sock_change": false, "sleep_time": null, "trail_nap": null, "sleep_why": null}, {"station": "Water Station", "mile": 10.4, "mile_str": "10.4", "cutoff": "-", "crew": "-", "pacer": "-", "gear": "-", "drop_bags": "-", "sleep_shower": "-", "medic": "-", "mand_sock_change": false, "sleep_time": null, "trail_nap": null, "sleep_why": null}, {"station": "Water Station", "mile": 24.6, "mile_str": "24.6", "cutoff": "-", "crew": "-", "pacer": "-", "gear": "-", "drop_bags": "-", "sleep_shower": "-", "medic": "-", "mand_sock_change": false, "sleep_time": null, "trail_nap": null, "sleep_why": null}, {"station": "Lane Mtn by UltrAspire", "mile": 32.5, "mile_str": "32.5", "cutoff": "Sun 10:45 PM", "crew": "-", "pacer": "-", "gear": "-", "drop_bags": "-", "sleep_shower": "-", "medic": "Yes", "mand_sock_change": false, "sleep_time": null, "trail_nap": null, "sleep_why": null}, {"station": "Bumble Bee Ranch HOLD", "mile": null, "mile_str": "-", "cutoff": "-", "crew": "HOLD", "pacer": "-", "gear": "-", "drop_bags": "-", "sleep_shower": "-", "medic": "-", "mand_sock_change": false, "sleep_time": null, "trail_nap": null, "sleep_why": null}, {"station": "Crown King", "mile": 36.6, "mile_str": "36.6", "cutoff": "Sun 11:55 PM", "crew": "Yes", "pacer": "-", "gear": "Yes", "drop_bags": "Yes (A)", "sleep_shower": "-", "medic": "Yes", "mand_sock_change": true, "sleep_time": null, "trail_nap": null, "sleep_why": null}, {"station": "Arrastra Creek", "mile": 51.0, "mile_str": "51", "cutoff": "Mon 7:00 AM", "crew": "-", "pacer": "-", "gear": "-", "drop_bags": "-", "sleep_shower": "-", "medic": "-", "mand_sock_change": false, "sleep_time": null, "trail_nap": null, "sleep_why": null}, {"station": "Kamp Kipa", "mile": 60.8, "mile_str": "60.8", "cutoff": "Mon 2:00 PM", "crew": "-", "pacer": "-", "gear": "-", "drop_bags": "Yes", "sleep_shower": "InD", "medic": "Yes", "mand_sock_change": false, "sleep_time": "NO", "trail_nap": "Yes 20-30 Minutes", "sleep_why": "Too early.\nAdrenaline still high.\nEasier to bank miles."}, {"station": "Camp Wamatochick", "mile": 67.4, "mile_str": "67.4", "cutoff": "Mon 4:45 PM", "crew": "-", "pacer": "-", "gear": "-", "drop_bags": "Yes", "sleep_shower": "InD+Sh", "medic": "-", "mand_sock_change": false, "sleep_time": "NO", "trail_nap": null, "sleep_why": null}, {"station": "Whiskey Row", "mile": 75.6, "mile_str": "75.6", "cutoff": "Mon 10:00 PM", "crew": "Yes", "pacer": "Yes", "gear": "-", "drop_bags": "Yes", "sleep_shower": "InD", "medic": "Yes", "mand_sock_change": true, "sleep_time": "NO", "trail_nap": null, "sleep_why": null}, {"station": "Watson Lake", "mile": 82.8, "mile_str": "82.8", "cutoff": "Tue 3:30 AM", "crew": "Yes $5", "pacer": "Yes $5", "gear": "-", "drop_bags": "-", "sleep_shower": "-", "medic": "-", "mand_sock_change": false, "sleep_time": null, "trail_nap": null, "sleep_why": null}, {"station": "Fain Ranch by Satisfy", "mile": 96.5, "mile_str": "96.5", "cutoff": "Tue 6:00 AM", "crew": "Yes", "pacer": "Yes", "gear": "Yes", "drop_bags": "Yes", "sleep_shower": "-", "medic": "-", "mand_sock_change": false, "sleep_time": null, "trail_nap": null, "sleep_why": null}, {"station": "Mingus Mountain", "mile": 107.2, "mile_str": "107.2", "cutoff": "Tue 1:00 PM", "crew": "Yes", "pacer": "Yes", "gear": "-", "drop_bags": "Yes", "sleep_shower": "InD+Sh", "medic": "Yes", "mand_sock_change": true, "sleep_time": "1.5 to 2.5 Hours", "trail_nap": null, "sleep_why": "Why:\nYou've cleared the brutal first 100 miles.\nFinished the huge climb from Fain Ranch.\nYou still have a long downhill into Jerome afterward.\nThis is probably the highest quality sleep location on the course."}, {"station": "Jerome", "mile": 124.2, "mile_str": "124.2", "cutoff": "Tue 8:30 PM", "crew": "Yes", "pacer": "Yes", "gear": "-", "drop_bags": "-", "sleep_shower": "-", "medic": "-", "mand_sock_change": false, "sleep_time": null, "trail_nap": null, "sleep_why": null}, {"station": "Dead Horse", "mile": 132.9, "mile_str": "132.9", "cutoff": "Wed 12:00 AM", "crew": "Yes", "pacer": "Yes", "gear": "-", "drop_bags": "Yes", "sleep_shower": "OutD+Sh", "medic": "Yes", "mand_sock_change": false, "sleep_time": "NO", "trail_nap": null, "sleep_why": null}, {"station": "Deer Pass", "mile": 146.9, "mile_str": "146.9", "cutoff": "Wed 4:45 AM", "crew": "-", "pacer": "-", "gear": "-", "drop_bags": "Yes", "sleep_shower": "-", "medic": "-", "mand_sock_change": false, "sleep_time": null, "trail_nap": null, "sleep_why": null}, {"station": "Water Station", "mile": 153.6, "mile_str": "153.6", "cutoff": "-", "crew": "-", "pacer": "-", "gear": "-", "drop_bags": "-", "sleep_shower": "-", "medic": "-", "mand_sock_change": false, "sleep_time": null, "trail_nap": null, "sleep_why": null}, {"station": "Sedona Posse Grounds", "mile": 159.1, "mile_str": "159.1", "cutoff": "Wed 12:00 PM", "crew": "Yes", "pacer": "Yes", "gear": "Yes", "drop_bags": "Yes", "sleep_shower": "InD", "medic": "Yes", "mand_sock_change": true, "sleep_time": "60-90 Minutes", "trail_nap": null, "sleep_why": "Why:\nOnly about 42 miles remain.\nMany runners begin hallucinating around here.\nThe race conducts mental status evaluations at Fort Tuthill."}, {"station": "Water Station", "mile": 170.4, "mile_str": "170.4", "cutoff": "-", "crew": "-", "pacer": "-", "gear": "-", "drop_bags": "-", "sleep_shower": "-", "medic": "-", "mand_sock_change": false, "sleep_time": null, "trail_nap": null, "sleep_why": null}, {"station": "Schnebly Hill", "mile": 175.7, "mile_str": "175.7", "cutoff": "Wed 9:00 PM", "crew": "Yes", "pacer": "NONE↧", "gear": "-", "drop_bags": "Yes", "sleep_shower": "-", "medic": "Yes", "mand_sock_change": false, "sleep_time": null, "trail_nap": null, "sleep_why": null}, {"station": "Munds Park", "mile": 190.1, "mile_str": "190.1", "cutoff": "Thur 2:45 AM", "crew": "Yes", "pacer": "Yes", "gear": "Yes", "drop_bags": "Yes", "sleep_shower": "OutD", "medic": "Yes", "mand_sock_change": false, "sleep_time": null, "trail_nap": null, "sleep_why": null}, {"station": "Kelly Canyon", "mile": 202.8, "mile_str": "202.8", "cutoff": "Thur 8:00 AM", "crew": "-", "pacer": "-", "gear": "-", "drop_bags": "-", "sleep_shower": "-", "medic": "-", "mand_sock_change": false, "sleep_time": null, "trail_nap": null, "sleep_why": null}, {"station": "Fort Tuthill", "mile": 211.1, "mile_str": "211.1", "cutoff": "Thur 12:45 PM", "crew": "Yes", "pacer": "Yes", "gear": "Yes", "drop_bags": "Yes (A)", "sleep_shower": "InD", "medic": "Yes+✔", "mand_sock_change": true, "sleep_time": "30-90 Minutes", "trail_nap": null, "sleep_why": "Only about 42 miles remain.\nMany runners begin hallucinating around here.\nThe race conducts mental status evaluations at Fort Tuthill."}, {"station": "Walnut Canyon", "mile": 227.2, "mile_str": "227.2", "cutoff": "Thur 7:45 PM", "crew": "Yes", "pacer": "Yes", "gear": "-", "drop_bags": "Yes", "sleep_shower": "-", "medic": "Yes", "mand_sock_change": false, "sleep_time": null, "trail_nap": null, "sleep_why": null}, {"station": "Wildcat Hill", "mile": 234.2, "mile_str": "234.2", "cutoff": "Thu 10:45 PM", "crew": "Yes", "pacer": "NONE↧", "gear": "Yes", "drop_bags": "Yes", "sleep_shower": "-", "medic": "-", "mand_sock_change": false, "sleep_time": null, "trail_nap": null, "sleep_why": null}, {"station": "Trinity Heights", "mile": 249.5, "mile_str": "249.5", "cutoff": "Fri 8:15 AM", "crew": "-", "pacer": "-", "gear": "-", "drop_bags": "-", "sleep_shower": "-", "medic": "-", "mand_sock_change": false, "sleep_time": null, "trail_nap": null, "sleep_why": null}, {"station": "Finish Line - Heritage Square", "mile": 253.5, "mile_str": "253.5", "cutoff": "Fri 10:00 AM", "crew": "Yes", "pacer": "-", "gear": "-", "drop_bags": "Yes (ALL)", "sleep_shower": "-", "medic": "Yes", "mand_sock_change": false, "sleep_time": null, "trail_nap": null, "sleep_why": null}], "elevation_sections": [{"section": "Start → Cottonwood Creek", "distance_str": "7.4 mi", "distance_mi": 7.4, "gain_str": "1,083 ft", "gain_ft": 1083, "loss_str": "1,007 ft", "loss_ft": 1007, "character": "Rolling", "notes": null}, {"section": "Cottonwood → Water, mile 10.4", "distance_str": "3.0 mi", "distance_mi": 3.0, "gain_str": "669 ft", "gain_ft": 669, "loss_str": "522 ft", "loss_ft": 522, "character": "Rolling uphill", "notes": "From Cottonwood Creek at mile 7.4 to Lane Mountain around mile 32.5, the course accumulates approximately:\n8,500 feet of climbing\nApproximately 3,900 feet of descending\nAbout 25 miles\nThis is the first major danger zone. The guide describes the section after Cottonwood Creek as the hottest and hardest portion of the course, with middle-of-the-pack runners taking approximately 10 hours and back-of-the-pack runners taking 13 hours or more.\nWhat it means: Do not expect normal hiking pace. A steep climbing pace of 30–40 minutes per mile could still be reasonable here."}, {"section": "Water 10.4 → Water 24.6", "distance_str": "14.2 mi", "distance_mi": 14.2, "gain_str": "4,921 ft", "gain_ft": 4921, "loss_str": "2,369 ft", "loss_ft": 2369, "character": "Major climb", "notes": null}, {"section": "Water 24.6 → Lane Mountain", "distance_str": "7.9 mi", "distance_mi": 7.9, "gain_str": "2,917 ft", "gain_ft": 2917, "loss_str": "968 ft", "loss_ft": 968, "character": "Major climb", "notes": null}, {"section": "Lane Mountain → Crown King", "distance_str": "4.0 mi", "distance_mi": 4.0, "gain_str": "187 ft", "gain_ft": 187, "loss_str": "1,161 ft", "loss_ft": 1161, "character": "Steep descent", "notes": null}, {"section": "Crown King → Arrastra Creek", "distance_str": "14.5 mi", "distance_mi": 14.5, "gain_str": "1,975 ft", "gain_ft": 1975, "loss_str": "2,516 ft", "loss_ft": 2516, "character": "Rolling, net downhill", "notes": null}, {"section": "Arrastra Creek → Kamp Kipa", "distance_str": "9.8 mi", "distance_mi": 9.8, "gain_str": "2,894 ft", "gain_ft": 2894, "loss_str": "682 ft", "loss_ft": 682, "character": "Major climb", "notes": "This 9.8-mile section adds approximately 2,900 feet of climbing with relatively little descent.\n\nWhat it means: This is another slow uphill section after more than 50 miles on the course. It will likely feel considerably harder than the raw elevation number suggests."}, {"section": "Kamp Kipa → Camp Wamatochick", "distance_str": "6.6 mi", "distance_mi": 6.6, "gain_str": "338 ft", "gain_ft": 338, "loss_str": "1,394 ft", "loss_ft": 1394, "character": "Descent", "notes": null}, {"section": "Camp Wamatochick → Whiskey Row", "distance_str": "8.3 mi", "distance_mi": 8.3, "gain_str": "233 ft", "gain_ft": 233, "loss_str": "1,293 ft", "loss_ft": 1293, "character": "Mostly downhill", "notes": null}, {"section": "Whiskey Row → Watson Lake", "distance_str": "7.1 mi", "distance_mi": 7.1, "gain_str": "335 ft", "gain_ft": 335, "loss_str": "440 ft", "loss_ft": 440, "character": "Relatively gentle", "notes": null}, {"section": "Watson Lake → Fain Ranch", "distance_str": "11.6 mi", "distance_mi": 11.6, "gain_str": "525 ft", "gain_ft": 525, "loss_str": "725 ft", "loss_ft": 725, "character": "Rolling", "notes": null}, {"section": "Fain Ranch → Mingus Mountain", "distance_str": "12.4 mi", "distance_mi": 12.4, "gain_str": "2,657 ft", "gain_ft": 2657, "loss_str": "69 ft", "loss_ft": 69, "character": "Sustained climb", "notes": "This is approximately: 12.4 miles\n2,657 feet of climbing\nOnly about 70 feet of descending\nIt is essentially one sustained climb.\nWhat it means: Plan for steady uphill hiking rather than trying to hold your overall average pace."}, {"section": "Mingus Mountain → Jerome", "distance_str": "17.0 mi", "distance_mi": 17.0, "gain_str": "2,051 ft", "gain_ft": 2051, "loss_str": "4,777 ft", "loss_ft": 4777, "character": "Long major descent", "notes": "This section contains about 4,777 feet of descent, along with roughly 2,050 feet of additional climbing.\nWhat it means: The net direction is sharply downhill, but it is not a continuous easy descent. The cumulative climbing means the section will still include meaningful uphill work. Protecting the quads and feet will matter."}, {"section": "Jerome → Dead Horse", "distance_str": "8.7 mi", "distance_mi": 8.7, "gain_str": "92 ft", "gain_ft": 92, "loss_str": "1,709 ft", "loss_ft": 1709, "character": "Mostly downhill", "notes": null}, {"section": "Dead Horse → Deer Pass", "distance_str": "14.0 mi", "distance_mi": 14.0, "gain_str": "1,345 ft", "gain_ft": 1345, "loss_str": "666 ft", "loss_ft": 666, "character": "Moderate climb", "notes": null}, {"section": "Deer Pass → Water, mile 153.6", "distance_str": "6.6 mi", "distance_mi": 6.6, "gain_str": "1,033 ft", "gain_ft": 1033, "loss_str": "594 ft", "loss_ft": 594, "character": "Rolling uphill", "notes": null}, {"section": "Water 153.6 → Sedona Posse", "distance_str": "5.5 mi", "distance_mi": 5.5, "gain_str": "463 ft", "gain_ft": 463, "loss_str": "374 ft", "loss_ft": 374, "character": "Rolling", "notes": null}, {"section": "Sedona Posse → Water, mile 170.4", "distance_str": "11.3 mi", "distance_mi": 11.3, "gain_str": "2,431 ft", "gain_ft": 2431, "loss_str": "974 ft", "loss_ft": 974, "character": "Major climb", "notes": "Across the two sub-sections, this portion includes approximately: 3,150 feet of climbing\nAround 1,180 feet of descending\nApproximately 17 miles\nWhat it means: This is another major sustained climbing block after mile 159, when fatigue and sleep deprivation will be significant."}, {"section": "Water 170.4 → Schnebly Hill", "distance_str": "5.7 mi", "distance_mi": 5.7, "gain_str": "725 ft", "gain_ft": 725, "loss_str": "210 ft", "loss_ft": 210, "character": "Continued climb", "notes": null}, {"section": "Schnebly Hill → Munds Park", "distance_str": "13.9 mi", "distance_mi": 13.9, "gain_str": "938 ft", "gain_ft": 938, "loss_str": "981 ft", "loss_ft": 981, "character": "Rolling", "notes": null}, {"section": "Munds Park → Kelly Canyon", "distance_str": "12.7 mi", "distance_mi": 12.7, "gain_str": "833 ft", "gain_ft": 833, "loss_str": "374 ft", "loss_ft": 374, "character": "Gradual uphill", "notes": null}, {"section": "Kelly Canyon → Fort Tuthill", "distance_str": "8.3 mi", "distance_mi": 8.3, "gain_str": "433 ft", "gain_ft": 433, "loss_str": "282 ft", "loss_ft": 282, "character": "Gentle uphill", "notes": null}, {"section": "Fort Tuthill → Walnut Canyon", "distance_str": "16.1 mi", "distance_mi": 16.1, "gain_str": "1,043 ft", "gain_ft": 1043, "loss_str": "1,296 ft", "loss_ft": 1296, "character": "Rolling, net downhill", "notes": null}, {"section": "Walnut Canyon → Wildcat Hill", "distance_str": "7.0 mi", "distance_mi": 7.0, "gain_str": "203 ft", "gain_ft": 203, "loss_str": "167 ft", "loss_ft": 167, "character": "Relatively gentle", "notes": null}, {"section": "Wildcat Hill → Trinity Heights", "distance_str": "15.2 mi", "distance_mi": 15.2, "gain_str": "3,114 ft", "gain_ft": 3114, "loss_str": "2,746 ft", "loss_ft": 2746, "character": "Very difficult rolling mountain section", "notes": null}, {"section": "Trinity Heights → Finish", "distance_str": "3.9 mi", "distance_mi": 3.9, "gain_str": "66 ft", "gain_ft": 66, "loss_str": "249 ft", "loss_ft": 249, "character": "Mostly downhill", "notes": null}], "gear_categories": [{"title": "Required Gear (Runner/Pacer)", "items": []}, {"title": "Cold Weather Gear (Required on Specific Sections)", "items": []}, {"title": "Hydration Requirement", "items": ["Runners must leave Cottonwood Creek carrying at least 4 liters of water."]}, {"title": "Recommend gear for a Runner/Pacer", "items": []}], "nutrients_lines": ["If you're getting into long-distance running, nutrition and hydration become part of the training itself. The biggest priorities are enough total calories, plenty of carbohydrates, adequate protein, fluids, and sodium, particularly once your runs start pushing beyond 60 to 90 minutes. Sports-nutrition guidance from American College of Sports Medicine emphasizes adequate carbohydrate, protein, fluids, and appropriate timing to support endurance performance and recovery. [acsm.org], [jandonline.org]", "Your basic targets", "For someone training regularly for longer distances:", "Nutrient | Good daily target", "Carbohydrates | ~5-7 g/kg body weight/day; more during very heavy training", "Protein | ~1.2-1.6 g/kg/day", "Fat | Roughly 20-35% of calories", "Fluids | Based primarily on your individual sweat rate", "During long runs | 30-60 g carbs/hour", "Very long runs, 2.5+ hr | Work toward 60-90 g carbs/hour if your stomach tolerates it", "Carbohydrate availability is especially important because prolonged endurance exercise pulls heavily from glycogen stores. Protein then supports repair and adaptation after training. [pmc.ncbi.nlm.nih.gov], [femaleandm...etriad.org]", "What that looks like in actual food", "Build most meals around:", "Carbs", "Rice", "Potatoes/sweet potatoes", "Oatmeal", "Pasta", "Bread/bagels", "Bananas and other fruit", "Cereal", "Tortillas", "Protein", "Chicken/turkey", "Lean beef", "Eggs", "Greek yogurt", "Cottage cheese", "Fish", "Milk", "Whey protein when convenient", "Healthy fats", "Olive oil", "Avocado", "Nuts/nut butter", "Seeds", "Salmon", "Don't fall into the trap of eating extremely \"clean\" while unintentionally undereating. High training volume requires a lot of energy.", "Before a long run", "For a run lasting 90+ minutes, I'd eat a carbohydrate-heavy meal about 2-4 hours beforehand.", "Example:", "2-3 hours before", "Bagel with honey", "Banana", "Greek yogurt", "Water/electrolytes", "Keep fat and fiber relatively low immediately before running because both can contribute to GI issues.", "If you run early in the morning and don't want a full meal:", "30-60 minutes before", "Banana + applesauce pouch", "Toast + honey", "Small sports drink", "You're basically giving yourself easily digestible carbohydrates.", "During the run", "This becomes increasingly important as distance increases.", "Under ~60 minutes", "Usually:", "Water → run → normal meal afterward", "You generally don't need gels or sports drinks unless it's particularly hot or you're doing a hard session.", "60-120 minutes", "Start practicing:", "30-60 g carbohydrate/hour", "Examples:", "GU Energy gel: roughly one every 30-40 minutes depending on the product", "Maurten Gel 100", "Clif Bloks", "Gatorade Endurance", "Skratch Labs drink mix", "Precision Fuel gels/chews", "The specific brand doesn't matter nearly as much as finding something your stomach tolerates.", "2+ hours", "This is where fueling becomes absolutely critical.", "Eventually work toward approximately:", "60-90 g carbohydrate/hour", "Don't suddenly try 90 g/hour on race day. Your gastrointestinal system can adapt to carbohydrate intake during exercise, so practice fueling during your weekly long runs. Higher carbohydrate intakes are particularly relevant to prolonged endurance events. [pmc.ncbi.nlm.nih.gov]", "For example, during a 3-hour long run:", "0:25 → gel", "0:55 → gel", "1:25 → gel", "1:55 → gel", "2:25 → gel", "2:55 → gel", "If each provides ~25 g carbs, that's ~50 g carbs/hour.", "As your training progresses, you can increase from there.", "Hydration", "This is where I'd personalize things rather than simply saying \"drink X gallons.\"", "Your requirement changes enormously based on temperature, humidity, pace, body size, and sweat rate.", "A useful method is to weigh yourself immediately before and after a one-hour run:", "Sweat loss = pre-run weight - post-run weight + fluids consumed - urine produced.", "For example:", "165 lb before", "163.5 lb afterward", "16 oz water consumed", "You lost roughly:", "1.5 lb + 1 lb of water = ~2.5 lb/hour", "That's a relatively heavy sweater, and your hydration strategy should reflect it.", "You generally don't want to finish long efforts substantially dehydrated, but you also shouldn't force excessive water intake. Overdrinking plain water can contribute to exercise-associated hyponatremia. Sports drinks supplying fluids, carbohydrate and electrolytes can be useful during prolonged exercise. [femaleandm...etriad.org]", "A general starting point used in sports hydration guidance is around 200-300 mL every 10-20 minutes, but individual sweat rate should ultimately drive the plan. [highperfor...ncelab.net]", "Don't forget sodium", "Especially in Arkansas heat/humidity, plain water may not be enough on long runs.", "For prolonged/hot sessions, start around 300-600 mg sodium/hour, then adjust based on sweat rate, conditions, and whether you're a salty sweater. Heavy/salty sweaters can require more.", "Products that make this easy include:", "LMNT", "Liquid I.V.", "Skratch Labs", "Precision Hydration", "Gatorade Endurance", "Check the label because sodium varies dramatically between them.", "After your run", "Within roughly 1-2 hours, think:", "Carbs + protein + fluids", "An easy recovery meal:", "Chocolate milk + banana immediately", "Then:", "Chicken + rice + vegetables + fruit", "Or:", "Eggs + potatoes + toast + fruit", "A practical protein target per meal is around 25-40 g, depending on your body size.", "You're trying to accomplish three things:", "Protein → muscle repair", "Carbs → restore glycogen", "Fluid + sodium → replace sweat loss", "Post-exercise carbohydrate and protein support glycogen replenishment and recovery. [pmc.ncbi.nlm.nih.gov]", "An example long-run day", "If your run starts at 7:00 AM:", "05:00:00", "Bagel + honey", "Banana", "Greek yogurt", "Water/electrolytes", "06:30:00", "Small amount of water", "7:00-9:00 AM run", "~500-750 mL fluid/hour as a starting point, adjusted to sweat rate", "~400-600 mg sodium/hour", "~40-60 g carbs/hour", "09:15:00", "Protein shake/chocolate milk", "Banana", "10:00:00", "Eggs", "Potatoes", "Toast", "Fruit", "Lunch", "Chicken", "Rice", "Vegetables", "Fruit", "Snack", "Greek yogurt + granola", "Dinner", "Salmon or lean beef", "Pasta/rice/potatoes", "Vegetables", "Before bed if hungry", "Greek yogurt/cottage cheese + fruit", "One thing I'd strongly recommend", "Don't wait until you're training for 15-20 miles before figuring this out. Train your fueling strategy at the same time you're training your legs.", "If you give me your weight, typical weekly mileage, longest run right now, and whether you're training for a half marathon, marathon, or something longer, I can calculate your approximate daily calories, carbs, protein, water, sodium, and long-run fueling schedule specifically for you."]};
+  </script>
+
+  <script>
+    let currentTab = 'overview';
+    let currentPacerPlan = '3A';
+    let currentAidFilter = 'all';
+    let overviewChartInstance = null;
+    let detailedChartInstance = null;
+    let currentGearRoster = 'dean';
+    let checkedGearItems = JSON.parse(localStorage.getItem('cocodona_gear_checked_v2') || '{}');
+
+    const RACER_GEAR_CATALOG = [
+      {
+        category: "Mandatory Aravaipa Race Requirements",
+        icon: "fa-triangle-exclamation text-amber-400",
+        desc: "Strictly enforced at gear check and aid checkpoints.",
+        items: [
+          { name: "Running Vest / Pack", note: "10L–15L capacity with front flask pockets & rear cargo" },
+          { name: "Hydration Bladder", note: "2.0L minimum capacity for rear reservoir compartment" },
+          { name: "Soft Flasks (2x 500mL)", note: "Front chest storage, bringing total pack capacity to 4.0L" },
+          { name: "Smartphone with Offline GPX Course Map", note: "Must have Gaia GPS / OnX / Coros app loaded + battery saver mode" },
+          { name: "Backup Battery Power Bank + Charging Cable", note: "Minimum 5,000–10,000 mAh to keep GPS phone/watch powered" },
+          { name: "Primary Trail Headlamp", note: "Minimum 300+ lumens with rechargeable battery core" },
+          { name: "Secondary Backup Headlamp / Flashlight", note: "Minimum 150+ lumens with fresh spare batteries" },
+          { name: "Emergency Space Blanket (Mylar foil)", note: "Unopened full-size hypothermia foil sheet" },
+          { name: "Emergency Pealess Whistle", note: "Loud rescue whistle (often built into vest chest strap)" },
+          { name: "Collapsible Reusable Cup", note: "Race is cupless; mandatory for cold fluids and sodas" }
+        ]
+      },
+      {
+        category: "Mandatory Cold & Alpine Weather Layers",
+        icon: "fa-snowflake text-cyan-400",
+        desc: "Required for high elevations (Mingus Mtn 7,700 ft & Flagstaff 7,000+ ft).",
+        items: [
+          { name: "Waterproof Hooded Rain Jacket", note: "Taped seams, breathable shell (keeps dry in mountain storms)" },
+          { name: "Lightweight Packable Insulated Puffy Jacket", note: "Synthetic or treated down for sub-freezing night temps" },
+          { name: "Thermal Long-Sleeve Base Layer", note: "Merino wool or moisture-wicking synthetic" },
+          { name: "Warm Running Gloves / Mittens", note: "Fleece or windproof insulated running gloves" },
+          { name: "Warm Beanie / Thermal Winter Hat", note: "Covers ears completely for alpine night stages" }
+        ]
+      },
+      {
+        category: "Desert Heat & Sun Defense",
+        icon: "fa-sun text-amber-300",
+        desc: "Essential for Black Canyon Trail and Cottonwood exposed furnace sections.",
+        items: [
+          { name: "UV Running Cap with Sun Cape / Neck Flap", note: "Protects neck and head from direct desert radiation" },
+          { name: "Running Sunglasses (Polarized / High UV)", note: "High contrast for rocky desert terrain" },
+          { name: "Cooling Buff / Multifunctional Neck Gaiter (2x)", note: "For loading with ice at aid stations" },
+          { name: "UV Arm Sun Sleeves (White / Light Color)", note: "Reflects heat; dip in ice water to maintain evaporative cooling" },
+          { name: "Mineral Sunscreen & SPF Lip Balm", note: "Sweat-resistant SPF 50+" }
+        ]
+      },
+      {
+        category: "Footwear, Socks & Blister Defense",
+        icon: "fa-socks text-emerald-400",
+        desc: "The single biggest race-ender. Prepare multi-pair rotations.",
+        items: [
+          { name: "Cushioned Trail Running Shoes (Primary Pair)", note: "Broken in, 0.5 size up for anticipated foot swelling" },
+          { name: "Secondary Backup Trail Running Shoes", note: "Fresh pair staged in drop bag (Jerome or Sedona)" },
+          { name: "Technical Running Socks (6–8 Pairs)", note: "Toe socks or anti-blister merino wool for mandatory sock changes" },
+          { name: "Trail Running Gaiters", note: "Keeps sand, granite pebbles, and cheatgrass seeds out of shoes" },
+          { name: "Anti-Chafe Lubricant / Friction Cream", note: "Generous application for feet, toes, groin, and underarms" },
+          { name: "Blister Care Kit", note: "Rigid Leukotape, sterile blister lancets, alcohol pads, hydrocolloid bandages" },
+          { name: "Small Nail Clippers & Tweezers", note: "For cactus spine removal and trail toe maintenance" }
+        ]
+      },
+      {
+        category: "Trail Hardware & Trekking",
+        icon: "fa-person-hiking text-lime-400",
+        desc: "Saves quads and glutes on Mingus Mountain and Elden climbs.",
+        items: [
+          { name: "Collapsible Carbon Trekking Poles", note: "Lightweight folding poles with secure grips and tip protectors" },
+          { name: "Trekking Pole Quiver / Vest Storage Loops", note: "Allows rapid stowing when running runnable downhill sections" },
+          { name: "GPS Multi-Sport Watch", note: "Long battery ultra-mode with breadcrumb course track loaded" }
+        ]
+      },
+      {
+        category: "Drop Bag Rest & Recovery Essentials",
+        icon: "fa-bed text-indigo-400",
+        desc: "Staged at major sleep stations (Whiskey Row, Jerome, Sedona, Fort Tuthill).",
+        items: [
+          { name: "Waterproof Drop Bags (3–4 Heavy-Duty Bags)", note: "Clearly labeled with Name, Bib #, and Aid Station" },
+          { name: "Packable Travel Pillow & Sleep Eye Mask", note: "For 90-minute sleep cycles in noisy aid tents" },
+          { name: "Foam Earplugs / Noise Isolating Buds", note: "Blocks loud aid station generator and crowd noise" },
+          { name: "Comfortable Recovery Slide Sandals", note: "Allows feet to breathe and dry during aid stops" },
+          { name: "Complete Dry Clothing Change Sets (2–3 Sets)", note: "Clean shorts, technical shirts, underwear, and hoodies" },
+          { name: "Personal Hygiene & Body Wipes", note: "Large unscented cleansing wipes for dust and salt removal" }
+        ]
+      },
+      {
+        category: "Fuel, Electrolytes & Meds",
+        icon: "fa-bolt text-yellow-400",
+        desc: "Caloric and sodium lifeline over 110+ hours.",
+        items: [
+          { name: "Energy Gels & Chews Assortment", note: "Mix of flavors and consistencies to prevent palate fatigue" },
+          { name: "Liquid Endurance Drink Mix", note: "High-carb electrolyte endurance powder" },
+          { name: "Electrolyte Salt Capsules", note: "High sodium/potassium capsules for hot daytime hours" },
+          { name: "Caffeine Supplements / Mints / Gums", note: "Targeted for midnight-to-dawn circadian low windows" },
+          { name: "Personal GI & Stomach Remedies", note: "Antacids, anti-nausea chews, ginger drops, pain relief" }
+        ]
+      }
+    ];
+
+    const PACER_GEAR_CATALOG = [
+      {
+        category: "Mandatory Aravaipa Pacer Requirements",
+        icon: "fa-triangle-exclamation text-amber-400",
+        desc: "Pacers are held to official race rules and check in with official pacer bib.",
+        items: [
+          { name: "Running Vest / Pack", note: "5L–12L pack with water storage and emergency gear" },
+          { name: "Hydration Flasks / Bladder", note: "Minimum 1.5L–2.0L fluid capacity (pacers cannot mule for runners!)" },
+          { name: "Smartphone with Offline GPX Course Map", note: "Pre-downloaded map of assigned pacing leg" },
+          { name: "Primary Trail Headlamp (High Lumens)", note: "Essential for night legs through Mingus Mountain or Flagstaff" },
+          { name: "Secondary Backup Light Source", note: "Pocket torch or spare headlamp with fresh batteries" },
+          { name: "Emergency Space Blanket", note: "Standard foil sheet carried at all times on trail" },
+          { name: "Emergency Whistle", note: "High-decibel trail rescue whistle" },
+          { name: "Collapsible Cup", note: "Mandatory for cold drinks at aid stations" }
+        ]
+      },
+      {
+        category: "Shift Clothing & Thermal Layers",
+        icon: "fa-shirt text-blue-400",
+        desc: "Prepared for desert heat or mountain freezes depending on your leg.",
+        items: [
+          { name: "Waterproof Hooded Rain Shell", note: "Lightweight weather protection in pack" },
+          { name: "Warm Insulated Mid-Layer / Puffy", note: "Mandatory if pacing high elevation or night segments" },
+          { name: "Thermal Gloves & Warm Beanie", note: "Crucial when running at a slower walking/power-hiking pace in cold" },
+          { name: "Running Cap & Sunglasses", note: "UV sun defense for daytime shifts" },
+          { name: "Cooling Buff / Neck Gaiter", note: "For dipping in ice water to beat daytime heat" }
+        ]
+      },
+      {
+        category: "Pacer Support & Trail Tools",
+        icon: "fa-hand-holding-heart text-pink-400",
+        desc: "Gear designed to help guide, navigate, and protect your runner.",
+        items: [
+          { name: "Personal Backup Battery & Charging Cord", note: "Keeps phone alive for emergency comms and navigation" },
+          { name: "Collapsible Carbon Trekking Poles", note: "Helpful for pacing the climbs up Mingus Mountain or Walnut Canyon" },
+          { name: "Trail Running Gaiters", note: "Prevents annoying debris stops in scree and sandy washes" },
+          { name: "Anti-Chafe Stick & Blister Patch Kit", note: "Keep yourself intact so you can focus 100% on the runner" },
+          { name: "Personal Trail Snacks & Electrolytes", note: "Sufficient fuel for your 20–45 mile shift" },
+          { name: "Written Pacer Cheat Sheet / Split Schedule", note: "Target arrival times, next cutoff, and runner medication schedule" }
+        ]
+      }
+    ];
+
+    function setGearRoster(roster) {
+      currentGearRoster = roster;
+      ['dean', 'darin', 'pacer'].forEach(r => {
+        const btn = document.getElementById('gearRosterBtn-' + r);
+        if (btn) {
+          if (r === roster) {
+            btn.className = 'gear-roster-btn px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1.5 bg-amber-500 text-slate-950 shadow';
+          } else {
+            btn.className = 'gear-roster-btn px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition flex items-center gap-1.5';
+          }
+        }
+      });
+
+      const descEl = document.getElementById('gearRosterDescription');
+      if (descEl) {
+        if (roster === 'dean') {
+          descEl.textContent = "Dean's 250M Kit: Mandatories, desert heat, alpine freeze, drop bags & fueling";
+        } else if (roster === 'darin') {
+          descEl.textContent = "Darin's 250M Kit: Mandatories, desert heat, alpine freeze, drop bags & fueling";
+        } else {
+          descEl.textContent = "Generic Pacer Shift Kit: Mandatory Aravaipa gear, 20-45mi self-sufficiency & runner support";
+        }
+      }
+
+      renderGearList();
+    }
+
+    function setTab(tabId) {
+      currentTab = tabId;
+      document.querySelectorAll('.tab-panel').forEach(el => el.classList.add('hidden'));
+      const activePanel = document.getElementById('tabContent-' + tabId);
+      if (activePanel) activePanel.classList.remove('hidden');
+
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+        btn.classList.add('text-slate-300');
+      });
+      const activeBtn = document.getElementById('tab-' + tabId);
+      if (activeBtn) {
+        activeBtn.classList.add('active');
+        activeBtn.classList.remove('text-slate-300');
+      }
+
+      if (tabId === 'overview' && !overviewChartInstance) {
+        initOverviewChart();
+      }
+      if (tabId === 'elevation' && !detailedChartInstance) {
+        initDetailedElevationChart();
+      }
+      if (tabId === 'calculator') {
+        runPaceCalculator();
+      }
+    }
+
+    function setPacerPlan(plan) {
+      currentPacerPlan = plan;
+      const plans = ['2', '3A', '4', '5', '6'];
+      
+      plans.forEach(p => {
+        const btn = document.getElementById('pacerModeBtn-' + p);
+        const view = document.getElementById('pacerPlanView-' + p);
+        if (btn) {
+          if (p === plan) {
+            btn.className = 'pacer-plan-toggle px-3 py-1.5 rounded-lg font-bold bg-amber-500 text-slate-950 transition shadow';
+          } else {
+            btn.className = 'pacer-plan-toggle px-3 py-1.5 rounded-lg font-semibold text-slate-400 hover:text-white transition';
+          }
+        }
+        if (view) {
+          if (p === plan) {
+            view.classList.remove('hidden');
+          } else {
+            view.classList.add('hidden');
+          }
+        }
+      });
+    }
+
+    function renderAidStationsTable(filter = 'all') {
+      currentAidFilter = filter;
+      const tbody = document.getElementById('aidStationsTableBody');
+      tbody.innerHTML = '';
+
+      const filtered = RACE_DATA.aid_stations.filter(item => {
+        if (filter === 'crew') return item.crew && item.crew.toLowerCase().includes('yes');
+        if (filter === 'pacer') return item.pacer && item.pacer.toLowerCase().includes('yes');
+        if (filter === 'sleep') return item.sleep_shower && item.sleep_shower !== '-';
+        if (filter === 'drop') return item.drop_bags && item.drop_bags !== '-';
+        return true;
+      });
+
+      filtered.forEach(item => {
+        const tr = document.createElement('tr');
+        tr.className = 'table-row-hover transition';
+
+        const crewBadge = item.crew && item.crew.toLowerCase().includes('yes')
+          ? '<span class="status-badge badge-yes">Crew</span>'
+          : item.crew === 'HOLD'
+          ? '<span class="status-badge badge-alert">HOLD</span>'
+          : '<span class="status-badge badge-no">-</span>';
+
+        const pacerBadge = item.pacer && item.pacer.toLowerCase().includes('yes')
+          ? '<span class="status-badge badge-yes">Pacer</span>'
+          : item.pacer && item.pacer.includes('NONE')
+          ? '<span class="status-badge badge-alert">NO PACER</span>'
+          : '<span class="status-badge badge-no">-</span>';
+
+        const dropBadge = item.drop_bags && item.drop_bags.toLowerCase().includes('yes')
+          ? `<span class="status-badge badge-blue">${item.drop_bags}</span>`
+          : '<span class="status-badge badge-no">-</span>';
+
+        const sleepBadge = item.sleep_shower && item.sleep_shower !== '-'
+          ? `<span class="status-badge badge-purple">${item.sleep_shower}</span>`
+          : '<span class="status-badge badge-no">-</span>';
+
+        const medicBadge = item.medic && item.medic.toLowerCase().includes('yes')
+          ? '<span class="text-rose-400 font-bold"><i class="fa-solid fa-plus-square"></i> Yes</span>'
+          : '<span class="text-slate-600">-</span>';
+
+        const sockBadge = item.mand_sock_change
+          ? '<span class="status-badge badge-warn"><i class="fa-solid fa-socks"></i> Mandatory</span>'
+          : '<span class="text-slate-600">-</span>';
+
+        tr.innerHTML = `
+          <td class="py-2.5 px-3.5 font-bold text-amber-400">${item.mile_str !== '-' ? item.mile_str + ' mi' : '-'}</td>
+          <td class="py-2.5 px-3.5 font-sans font-medium text-white">${item.station}</td>
+          <td class="py-2.5 px-3.5 text-slate-300 font-mono">${item.cutoff}</td>
+          <td class="py-2.5 px-3">${crewBadge}</td>
+          <td class="py-2.5 px-3">${pacerBadge}</td>
+          <td class="py-2.5 px-3 text-slate-400">${item.gear}</td>
+          <td class="py-2.5 px-3">${dropBadge}</td>
+          <td class="py-2.5 px-3">${sleepBadge}</td>
+          <td class="py-2.5 px-3">${medicBadge}</td>
+          <td class="py-2.5 px-3">${sockBadge}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function filterAidStations(type) {
+      document.querySelectorAll('.aid-filter-btn').forEach(btn => {
+        btn.className = 'aid-filter-btn px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white border border-slate-700';
+      });
+      const target = document.getElementById('filterBtn-' + type);
+      if (target) {
+        target.className = 'aid-filter-btn px-3 py-1.5 rounded-lg bg-amber-500 text-slate-950 font-bold';
+      }
+      renderAidStationsTable(type);
+    }
+
+    function renderSleepPlanTable() {
+      const tbody = document.getElementById('sleepPlanTableBody');
+      tbody.innerHTML = '';
+
+      RACE_DATA.aid_stations.forEach(item => {
+        if (!item.sleep_shower || item.sleep_shower === '-') return;
+
+        const tr = document.createElement('tr');
+        tr.className = 'table-row-hover transition';
+
+        let sleepTimeBadge = '<span class="text-slate-500">None</span>';
+        if (item.sleep_time) {
+          if (item.sleep_time.toLowerCase().includes('no')) {
+            sleepTimeBadge = '<span class="status-badge badge-no">NO</span>';
+          } else {
+            sleepTimeBadge = `<span class="status-badge badge-yes font-mono font-bold">${item.sleep_time}</span>`;
+          }
+        }
+
+        let napBadge = item.trail_nap 
+          ? `<span class="status-badge badge-warn font-mono font-bold">${item.trail_nap}</span>`
+          : '<span class="text-slate-600">-</span>';
+
+        tr.innerHTML = `
+          <td class="py-3 px-3.5 font-bold font-mono text-amber-400">${item.mile_str} mi</td>
+          <td class="py-3 px-3.5 font-semibold text-white">${item.station}</td>
+          <td class="py-3 px-3.5"><span class="status-badge badge-purple">${item.sleep_shower}</span></td>
+          <td class="py-3 px-3.5">${sleepTimeBadge}</td>
+          <td class="py-3 px-3.5">${napBadge}</td>
+          <td class="py-3 px-4 text-xs text-slate-300 leading-relaxed whitespace-pre-line">${item.sleep_why || '-'}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    let currentElevationFilter = 'all';
+
+    function renderElevationTable(filter = 'all') {
+      currentElevationFilter = filter;
+      const tbody = document.getElementById('elevationTableBody');
+      tbody.innerHTML = '';
+
+      const filtered = RACE_DATA.elevation_sections.filter(sec => {
+        const isCrux = (sec.notes && sec.notes.length > 5) || 
+                       sec.gain_ft >= 2000 || 
+                       sec.loss_ft >= 2500 || 
+                       sec.section.includes('Cottonwood') || 
+                       sec.section.includes('Mingus') || 
+                       sec.section.includes('Jerome') || 
+                       sec.section.includes('Trinity');
+        if (filter === 'crux') return isCrux;
+        if (filter === 'climb') return sec.gain_ft >= 1000;
+        if (filter === 'descent') return sec.loss_ft >= 1200;
+        return true;
+      });
+
+      filtered.forEach(sec => {
+        const tr = document.createElement('tr');
+        tr.className = 'table-row-hover transition';
+
+        const isCrux = (sec.notes && sec.notes.length > 5) || 
+                       sec.gain_ft >= 2000 || 
+                       sec.loss_ft >= 2500 || 
+                       sec.section.includes('Cottonwood') || 
+                       sec.section.includes('Mingus') || 
+                       sec.section.includes('Jerome') || 
+                       sec.section.includes('Trinity');
+
+        let badge = '<span class="status-badge badge-no font-sans">Moderate</span>';
+        if (sec.gain_ft >= 2500 || sec.loss_ft >= 4000 || sec.section.includes('Cottonwood')) {
+          badge = '<span class="status-badge badge-alert font-sans font-bold"><i class="fa-solid fa-fire"></i> Severe Crux</span>';
+        } else if (isCrux) {
+          badge = '<span class="status-badge badge-warn font-sans font-bold"><i class="fa-solid fa-triangle-exclamation"></i> High Alert</span>';
+        } else if (sec.gain_ft >= 1000) {
+          badge = '<span class="status-badge badge-yes font-sans">Major Climb</span>';
+        } else if (sec.loss_ft >= 1500) {
+          badge = '<span class="status-badge badge-purple font-sans">Steep Down</span>';
+        }
+
+        tr.innerHTML = `
+          <td class="py-2.5 px-3.5 font-sans font-medium text-white">${sec.section}</td>
+          <td class="py-2.5 px-3 text-slate-300 font-bold">${sec.distance_str}</td>
+          <td class="py-2.5 px-3 ${sec.gain_ft >= 1500 ? 'text-amber-400 font-black' : 'text-emerald-400 font-bold'}">+${sec.gain_ft.toLocaleString()} ft</td>
+          <td class="py-2.5 px-3 ${sec.loss_ft >= 2500 ? 'text-rose-400 font-black' : 'text-slate-400'}">-${sec.loss_ft.toLocaleString()} ft</td>
+          <td class="py-2.5 px-3.5 font-sans">${badge}</td>
+          <td class="py-2.5 px-4 font-sans text-xs text-slate-300 whitespace-pre-line leading-relaxed">${sec.notes || sec.character}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function filterElevationSections(type) {
+      document.querySelectorAll('.elev-filter-btn').forEach(btn => {
+        btn.className = 'elev-filter-btn px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white border border-slate-700';
+      });
+      const activeBtn = document.getElementById('elevFilterBtn-' + type);
+      if (activeBtn) {
+        activeBtn.className = 'elev-filter-btn px-3 py-1.5 rounded-lg bg-amber-500 text-slate-950 font-bold';
+      }
+      renderElevationTable(type);
+    }
+
+    function renderGearList() {
+      const container = document.getElementById('gearCategoriesContainer');
+      container.innerHTML = '';
+
+      const catalog = (currentGearRoster === 'pacer') ? PACER_GEAR_CATALOG : RACER_GEAR_CATALOG;
+      const rosterLabel = (currentGearRoster === 'dean') ? 'Dean' : (currentGearRoster === 'darin') ? 'Darin' : 'Generic Pacer';
+
+      let totalItems = 0;
+      let checkedCount = 0;
+      const missingItems = [];
+
+      catalog.forEach(cat => {
+        const card = document.createElement('div');
+        card.className = 'glass-card rounded-2xl p-4.5 space-y-3';
+
+        const heading = document.createElement('div');
+        heading.className = 'flex items-center justify-between border-b border-slate-800 pb-2';
+        heading.innerHTML = `
+          <div>
+            <h3 class="font-bold text-sm text-white flex items-center gap-2">
+              <i class="fa-solid ${cat.icon}"></i> ${cat.category}
+            </h3>
+            <p class="text-[11px] text-slate-400 mt-0.5">${cat.desc}</p>
+          </div>
+          <span class="text-[11px] font-mono text-slate-400 bg-slate-900 px-2 py-0.5 rounded border border-slate-800">${cat.items.length} items</span>
+        `;
+        card.appendChild(heading);
+
+        const list = document.createElement('div');
+        list.className = 'space-y-2 text-xs';
+
+        cat.items.forEach(item => {
+          totalItems++;
+          const itemKey = `${currentGearRoster}_${cat.category}_${item.name}`;
+          const isChecked = !!checkedGearItems[itemKey];
+          if (isChecked) {
+            checkedCount++;
+          } else {
+            missingItems.push({ name: item.name, category: cat.category, note: item.note });
+          }
+
+          const row = document.createElement('label');
+          row.className = `flex items-start gap-3 p-2.5 rounded-xl ${isChecked ? 'bg-slate-900/40 border border-slate-800/50' : 'bg-slate-900/80 border border-slate-800 hover:border-slate-700'} cursor-pointer transition select-none`;
+          row.innerHTML = `
+            <input type="checkbox" onchange="toggleGearItem('${itemKey}')" ${isChecked ? 'checked' : ''} class="mt-0.5 w-4 h-4 rounded text-amber-500 focus:ring-amber-500 bg-slate-950 border-slate-700">
+            <div class="flex-1">
+              <div class="flex items-center justify-between gap-2">
+                <span class="${isChecked ? 'line-through text-slate-500' : 'text-white font-semibold'}">${item.name}</span>
+                <span class="text-[10px] font-mono px-1.5 py-0.5 rounded ${isChecked ? 'bg-slate-800/50 text-slate-500' : 'bg-amber-500/10 text-amber-400 border border-amber-500/20'}">
+                  ${isChecked ? 'Acquired' : 'Needed'}
+                </span>
+              </div>
+              <p class="text-[11px] ${isChecked ? 'text-slate-600 line-through' : 'text-slate-400'} mt-0.5 leading-snug">${item.note}</p>
+            </div>
+          `;
+          list.appendChild(row);
+        });
+
+        card.appendChild(list);
+        container.appendChild(card);
+      });
+
+      // Update progress header badge
+      const progressBadge = document.getElementById('gearProgressText');
+      if (progressBadge) {
+        progressBadge.textContent = `${checkedCount} / ${totalItems} Acquired (${Math.round((checkedCount / (totalItems || 1)) * 100)}%)`;
+      }
+
+      // Render Needed / Missing summary callout
+      const summaryContainer = document.getElementById('gearMissingSummary');
+      if (summaryContainer) {
+        const remainingCount = totalItems - checkedCount;
+        if (remainingCount === 0) {
+          summaryContainer.innerHTML = `
+            <div class="flex items-center gap-2 text-emerald-400 font-bold">
+              <i class="fa-solid fa-circle-check text-base"></i>
+              <span>100% Prepared! All ${totalItems} items for ${rosterLabel} are acquired and packed.</span>
+            </div>
+            <span class="text-[11px] font-mono text-slate-400">Ready for start line gear inspection</span>
+          `;
+        } else {
+          summaryContainer.innerHTML = `
+            <div class="flex items-center gap-2">
+              <span class="p-1.5 rounded-lg bg-amber-500/20 text-amber-400 font-bold">
+                <i class="fa-solid fa-list-check"></i>
+              </span>
+              <div>
+                <span class="font-bold text-white">${rosterLabel}: <span class="text-amber-400">${remainingCount} item${remainingCount === 1 ? '' : 's'} still needed</span></span>
+                <span class="text-slate-400 ml-1">(${checkedCount} of ${totalItems} acquired)</span>
+              </div>
+            </div>
+            <div class="text-[11px] text-slate-400 font-mono">
+              Uncheck/check items as you pack your gear bins
+            </div>
+          `;
+        }
+      }
+    }
+
+    function toggleGearItem(itemKey) {
+      checkedGearItems[itemKey] = !checkedGearItems[itemKey];
+      localStorage.setItem('cocodona_gear_checked_v2', JSON.stringify(checkedGearItems));
+      renderGearList();
+    }
+
+    function resetGearChecklist() {
+      const rosterLabel = (currentGearRoster === 'dean') ? 'Dean' : (currentGearRoster === 'darin') ? 'Darin' : 'Generic Pacer';
+      if (confirm(`Reset all checked gear items for ${rosterLabel}?`)) {
+        // Only clear keys starting with currentGearRoster
+        Object.keys(checkedGearItems).forEach(k => {
+          if (k.startsWith(currentGearRoster + '_')) {
+            delete checkedGearItems[k];
+          }
+        });
+        localStorage.setItem('cocodona_gear_checked_v2', JSON.stringify(checkedGearItems));
+        renderGearList();
+      }
+    }
+
+    function updateQuickEstimator() {
+      const targetHours = parseFloat(document.getElementById('quickTargetSlider').value);
+      document.getElementById('quickTargetHoursLabel').textContent = targetHours + ' hours';
+      document.getElementById('calcTargetHours').value = targetHours;
+
+      const stoppage = 14;
+      const movingHours = Math.max(1, targetHours - stoppage);
+      const totalMiles = 253.5;
+      const speed = totalMiles / movingHours;
+      const minPerMile = 60 / speed;
+      const mins = Math.floor(minPerMile);
+      const secs = Math.round((minPerMile - mins) * 60);
+
+      document.getElementById('quickMovingSpeed').textContent = speed.toFixed(2) + ' mph';
+      document.getElementById('quickPaceMinMile').textContent = mins + ':' + (secs < 10 ? '0' : '') + secs + ' / mi';
+      document.getElementById('quickBufferHours').textContent = '+' + (125 - targetHours).toFixed(1) + ' hrs';
+
+      calculateNutritionTargets();
+    }
+
+    function runPaceCalculator() {
+      const targetHours = parseFloat(document.getElementById('calcTargetHours').value) || 110;
+      const stopHours = parseFloat(document.getElementById('calcStopHours').value) || 14;
+      
+      // Trail Rest / Back Decompression Inputs
+      const restIntervalHours = parseFloat(document.getElementById('calcRestIntervalHours').value) || 4;
+      const restDurationMins = parseFloat(document.getElementById('calcRestDurationMins').value) || 15;
+
+      const totalMiles = 253.5;
+
+      // Calculate total moving time needed based on base target and stop allowance
+      const baseMovingHours = Math.max(1, targetHours - stopHours);
+      const movingSpeed = totalMiles / baseMovingHours;
+      const minPerMile = 60 / movingSpeed;
+      const mins = Math.floor(minPerMile);
+      const secs = Math.round((minPerMile - mins) * 60);
+
+      document.getElementById('calcMovingSpeedText').textContent = movingSpeed.toFixed(2) + ' mph';
+      document.getElementById('calcMinMileText').textContent = '(' + mins + ':' + (secs < 10 ? '0' : '') + secs + ' / mile)';
+
+      // Calculate Trail Rest Impact:
+      // Number of trail rests = floor(baseMovingHours / restIntervalHours)
+      const restBreakCount = Math.max(0, Math.floor(baseMovingHours / Math.max(0.5, restIntervalHours)));
+      const totalTrailRestHours = (restBreakCount * restDurationMins) / 60;
+      const projectedTotalFinishHours = targetHours + totalTrailRestHours;
+      const cutoffBuffer = 125.0 - projectedTotalFinishHours;
+
+      document.getElementById('calcRestTotalCount').textContent = restBreakCount + ' breaks';
+      document.getElementById('calcRestTotalHours').textContent = '+' + totalTrailRestHours.toFixed(1) + ' hrs added';
+      document.getElementById('calcRestProjectedFinish').textContent = projectedTotalFinishHours.toFixed(1) + ' hrs';
+      
+      const bufferElem = document.getElementById('calcRestCutoffBuffer');
+      const badgeElem = document.getElementById('restImpactBadge');
+      const advisoryElem = document.getElementById('calcRestRiskAdvisory');
+
+      if (cutoffBuffer >= 6.0) {
+        bufferElem.textContent = '+' + cutoffBuffer.toFixed(1) + ' hrs buffer';
+        bufferElem.className = 'text-[11px] text-emerald-400 font-bold';
+        badgeElem.className = 'status-badge badge-yes font-mono font-bold';
+        badgeElem.textContent = 'Safe Under Cutoff';
+        advisoryElem.className = 'p-2.5 rounded-lg bg-emerald-950/20 border border-emerald-500/30 text-[11px] text-slate-300 flex items-center gap-2';
+        advisoryElem.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-400 text-sm"></i> <span><strong>Low Cutoff Risk:</strong> Taking a ${restDurationMins}-min break every ${restIntervalHours} hrs adds ${totalTrailRestHours.toFixed(1)} hrs total. Dean & Darin remain safely <strong>${cutoffBuffer.toFixed(1)} hours ahead of the 125h cutoff</strong> while giving their lumbar spine and hips essential recovery!</span>`;
+      } else if (cutoffBuffer > 0) {
+        bufferElem.textContent = '+' + cutoffBuffer.toFixed(1) + ' hrs buffer (Tight!)';
+        bufferElem.className = 'text-[11px] text-amber-400 font-bold';
+        badgeElem.className = 'status-badge badge-warn font-mono font-bold';
+        badgeElem.textContent = 'Caution: Tight Buffer';
+        advisoryElem.className = 'p-2.5 rounded-lg bg-amber-950/20 border border-amber-500/30 text-[11px] text-slate-300 flex items-center gap-2';
+        advisoryElem.innerHTML = `<i class="fa-solid fa-triangle-exclamation text-amber-400 text-sm"></i> <span><strong>Moderate Risk:</strong> Projected finish is ${projectedTotalFinishHours.toFixed(1)} hrs (${cutoffBuffer.toFixed(1)} hrs before cutoff). Consider shortening rests to 10 mins or increasing moving pace by 0.15 mph to maintain safety margin.</span>`;
+      } else {
+        bufferElem.textContent = Math.abs(cutoffBuffer).toFixed(1) + ' hrs OVER Cutoff!';
+        bufferElem.className = 'text-[11px] text-rose-400 font-bold';
+        badgeElem.className = 'status-badge badge-alert font-mono font-bold';
+        badgeElem.textContent = 'ALERT: Exceeds 125h Cutoff';
+        advisoryElem.className = 'p-2.5 rounded-lg bg-rose-950/20 border border-rose-500/30 text-[11px] text-slate-300 flex items-center gap-2';
+        advisoryElem.innerHTML = `<i class="fa-solid fa-skull-crossbones text-rose-400 text-sm"></i> <span><strong>High Cutoff Risk:</strong> Projected finish of ${projectedTotalFinishHours.toFixed(1)} hrs misses the 125-hour cutoff by ${Math.abs(cutoffBuffer).toFixed(1)} hrs! Either space breaks to every 5-6 hours or reduce aid station stoppage.</span>`;
+      }
+
+      // Start Time: Sunday 5:00 AM MST, May 2, 2027
+      const startTime = new Date('2027-05-02T05:00:00');
+      const tbody = document.getElementById('calculatorScheduleTableBody');
+      tbody.innerHTML = '';
+
+      RACE_DATA.aid_stations.forEach(station => {
+        if (station.mile === null) return;
+        const fraction = station.mile / totalMiles;
+        const stationMovingHrs = station.mile / movingSpeed;
+        const stationStopHrs = (stopHours + totalTrailRestHours) * fraction;
+        const stationElapsedHrs = stationMovingHrs + stationStopHrs;
+
+        const arrivalDate = new Date(startTime.getTime() + stationElapsedHrs * 3600 * 1000);
+        const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        const dayStr = dayNames[arrivalDate.getDay()];
+        let h = arrivalDate.getHours();
+        const ampm = h >= 12 ? 'PM' : 'AM';
+        h = h % 12 || 12;
+        const m = arrivalDate.getMinutes();
+        const todStr = dayStr + ' ' + h + ':' + (m < 10 ? '0' : '') + m + ' ' + ampm;
+
+        const tr = document.createElement('tr');
+        tr.className = 'table-row-hover transition';
+
+        const estElapsedStr = Math.floor(stationElapsedHrs) + 'h ' + Math.round((stationElapsedHrs % 1) * 60) + 'm';
+
+        tr.innerHTML = `
+          <td class="py-2.5 px-3.5 font-bold text-amber-400">${station.mile.toFixed(1)} mi</td>
+          <td class="py-2.5 px-3.5 font-sans font-semibold text-white">${station.station}</td>
+          <td class="py-2.5 px-3 text-slate-300">${estElapsedStr}</td>
+          <td class="py-2.5 px-3 text-emerald-400 font-bold">${todStr}</td>
+          <td class="py-2.5 px-3 text-slate-400">${station.cutoff}</td>
+          <td class="py-2.5 px-3 text-slate-300 font-semibold">${station.cutoff !== '-' ? (cutoffBuffer > 0 ? 'Safe Margin' : 'At Risk') : 'No Cutoff'}</td>
+          <td class="py-2.5 px-3"><span class="status-badge ${cutoffBuffer >= 6 ? 'badge-yes' : cutoffBuffer > 0 ? 'badge-warn' : 'badge-alert'}">${cutoffBuffer > 0 ? 'On Pace' : 'Cutoff Risk'}</span></td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function calculateNutritionTargets() {
+      const weightLbs = parseFloat(document.getElementById('nutWeightLbs').value) || 165;
+      const temp = document.getElementById('nutTempLevel').value;
+      const sweat = document.getElementById('nutSweatLevel').value;
+
+      let carbMin = 45;
+      let carbMax = 65;
+      let fluidMin = 500;
+      let fluidMax = 750;
+      let sodiumMin = 400;
+      let sodiumMax = 600;
+
+      if (temp === 'hot') {
+        fluidMin = 750;
+        fluidMax = 1100;
+        sodiumMin += 200;
+        sodiumMax += 300;
+      } else if (temp === 'cool') {
+        fluidMin = 400;
+        fluidMax = 600;
+      }
+
+      if (sweat === 'heavy') {
+        sodiumMin += 250;
+        sodiumMax += 400;
+        fluidMin += 150;
+      } else if (sweat === 'light') {
+        sodiumMin = Math.max(300, sodiumMin - 100);
+      }
+
+      document.getElementById('nutTargetCarbs').textContent = `${carbMin} - ${carbMax} g`;
+      document.getElementById('nutTargetFluids').textContent = `${fluidMin} - ${fluidMax} mL`;
+      document.getElementById('nutTargetSodiumVal').textContent = `${sodiumMin} - ${sodiumMax} mg`;
+
+      const targetHours = parseFloat(document.getElementById('calcTargetHours').value) || 110;
+      const avgKcalPerHr = ((carbMin + carbMax) / 2) * 4;
+      const totalKcal = Math.round(avgKcalPerHr * targetHours);
+      document.getElementById('nutTargetTotalKcal').textContent = `~${totalKcal.toLocaleString()} kcal`;
+    }
+
+    function initOverviewChart() {
+      const ctx = document.getElementById('overviewElevationChart').getContext('2d');
+      
+      let runningMiles = 0;
+      const labels = ['Start (0 mi)'];
+      const gains = [0];
+
+      RACE_DATA.elevation_sections.forEach(sec => {
+        runningMiles += sec.distance_mi;
+        labels.push(`${sec.section.split('→')[1] || sec.section} (${runningMiles.toFixed(0)}m)`);
+        gains.push(sec.gain_ft);
+      });
+
+      overviewChartInstance = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: labels,
+          datasets: [{
+            label: 'Elevation Gain per Section (ft)',
+            data: gains,
+            borderColor: '#f59e0b',
+            backgroundColor: 'rgba(245, 158, 11, 0.15)',
+            borderWidth: 2,
+            fill: true,
+            tension: 0.35,
+            pointBackgroundColor: '#f59e0b',
+            pointRadius: 3,
+            pointHoverRadius: 6
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              backgroundColor: '#0f172a',
+              titleColor: '#f8fafc',
+              bodyColor: '#fbbf24',
+              borderColor: '#334155',
+              borderWidth: 1,
+              padding: 10
+            }
+          },
+          scales: {
+            x: {
+              grid: { color: 'rgba(255,255,255,0.05)' },
+              ticks: { color: '#94a3b8', maxRotation: 45, font: { size: 10 } }
+            },
+            y: {
+              grid: { color: 'rgba(255,255,255,0.05)' },
+              ticks: { color: '#94a3b8', font: { size: 10 } },
+              title: { display: true, text: 'Climbing per Section (ft)', color: '#94a3b8', font: { size: 11 } }
+            }
+          }
+        }
+      });
+    }
+
+    function initDetailedElevationChart() {
+      const ctx = document.getElementById('detailedElevationChart').getContext('2d');
+      
+      const labels = [];
+      const gains = [];
+      const losses = [];
+      const bgColors = [];
+
+      RACE_DATA.elevation_sections.forEach(sec => {
+        const shortName = sec.section.includes('→') ? sec.section.split('→')[1].trim() : sec.section;
+        labels.push(`${shortName} (${sec.distance_str})`);
+        gains.push(sec.gain_ft);
+        losses.push(-sec.loss_ft);
+
+        if (sec.gain_ft >= 2500 || sec.loss_ft >= 4000 || sec.section.includes('Cottonwood')) {
+          bgColors.push('rgba(244, 63, 94, 0.85)'); // Severe Red
+        } else if (sec.gain_ft >= 1500 || sec.loss_ft >= 2000) {
+          bgColors.push('rgba(245, 158, 11, 0.85)'); // Warning Amber
+        } else {
+          bgColors.push('rgba(16, 185, 129, 0.7)'); // Standard Green
+        }
+      });
+
+      detailedChartInstance = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              label: 'Elevation Gain (+ft) [Red/Orange = Crux Zones]',
+              data: gains,
+              backgroundColor: bgColors,
+              borderRadius: 4,
+              borderWidth: 0
+            },
+            {
+              label: 'Elevation Loss (-ft)',
+              data: losses,
+              backgroundColor: 'rgba(148, 163, 184, 0.4)',
+              borderRadius: 4,
+              borderWidth: 0
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              labels: { color: '#cbd5e1', font: { size: 11 } }
+            },
+            tooltip: {
+              backgroundColor: '#0f172a',
+              borderColor: '#334155',
+              borderWidth: 1,
+              callbacks: {
+                label: function(context) {
+                  const val = context.raw;
+                  return context.dataset.label.split('[')[0] + ': ' + (val > 0 ? '+' : '') + val.toLocaleString() + ' ft';
+                }
+              }
+            }
+          },
+          scales: {
+            x: {
+              stacked: false,
+              grid: { color: 'rgba(255,255,255,0.05)' },
+              ticks: { color: '#94a3b8', font: { size: 9 }, maxRotation: 55 }
+            },
+            y: {
+              grid: { color: 'rgba(255,255,255,0.05)' },
+              ticks: { 
+                color: '#94a3b8', 
+                font: { size: 10 },
+                callback: function(value) { return value.toLocaleString() + ' ft'; }
+              },
+              title: { display: true, text: 'Vertical Change (ft per Section)', color: '#94a3b8', font: { size: 11 } }
+            }
+          }
+        }
+      });
+    }
+
+    // Initial render
+    window.addEventListener('DOMContentLoaded', () => {
+      renderAidStationsTable();
+      renderSleepPlanTable();
+      renderElevationTable();
+      renderGearList();
+      updateQuickEstimator();
+      initOverviewChart();
+    });
+  </script>
+</body>
+</html>
